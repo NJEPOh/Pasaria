@@ -1,0 +1,29 @@
+1. Beranda
+- Navbar (sticky ga gerak kemana mana) (Logo aplikasi(jadi button juga), Search bar, Keranjang, 
+Notifikasi, Pesan, Tombol Toko, Tombol profil(ke informasi akun)) urut dari kiri ke kanan
+- Banner promo/iklan umkm
+- Kategori 
+- Katalog barang (sampai 10 kolom) nanti dibawahnya tombol (muat lebih banyak) untuk tambah kolom Katalog
+- footer
+
+2. Detail produk
+- Navbar (sticky ga gerak kemana mana) (Logo aplikasi(jadi button juga), Search bar, Keranjang, 
+Notifikasi, Pesan, Tombol Toko, Tombol profil(ke informasi akun)) urut dari kiri ke kanan
+- Gambar produk
+- Nama produk
+- Jumlah terjual
+- rating
+- Harga
+- Varian
+- Deskripsi produk
+- Ulasan Pembeli
+- Tombol tambah ke keranjang, beli, wishlist, chat, share (sticky ada di kanan)
+- Katalog barang (sampai 10 kolom)
+- footer
+
+3. Keranjang
+- Navbar (sticky ga gerak kemana mana) (Logo aplikasi(jadi button juga), Search bar, Keranjang, 
+Notifikasi, Pesan, Tombol Toko, Tombol profil(ke informasi akun)) urut dari kiri ke kanan
+- Tombol pilih semua
+- tabel barang di keranjang (ada tombol tambah jumlah)
+- di kanan ada tombol beli setelah memilih barang di keranjang

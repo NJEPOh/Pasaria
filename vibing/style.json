@@ -1,0 +1,344 @@
+{
+    "design_system": {
+        "name": "SemarCommerce Modern Marketplace UI",
+        "style": "Clean Minimal Marketplace",
+        "framework": "TailwindCSS",
+        "theme_mode": "light",
+        "design_principle": [
+            "minimal",
+            "compact",
+            "flat_ui",
+            "production_ready",
+            "mobile_first",
+            "marketplace_style"
+        ]
+    },
+    "colors": {
+        "primary": {
+            "main": "#1D0251",
+            "hover": "#16013D",
+            "light": "#E7E1F7"
+        },
+        "secondary": {
+            "main": "#019081",
+            "hover": "#017A6E",
+            "light": "#D5F5F1"
+        },
+        "secondary_2": {
+            "main": "#74CC7E",
+            "hover": "#5FBA69",
+            "light": "#E6F7E8"
+        },
+        "additional": {
+            "main": "#D2EBA7",
+            "hover": "#C2E08F",
+            "light": "#F3F9E8"
+        },
+        "status": {
+            "success": "#15803D",
+            "warning": "#CA8A04",
+            "danger": "#B91C1C",
+            "info": "#1D4ED8"
+        },
+        "background": {
+            "primary": "#FFFFFF",
+            "secondary": "#F8FAFC",
+            "surface": "#FFFFFF"
+        },
+        "text": {
+            "primary": "#111827",
+            "secondary": "#374151",
+            "muted": "#6B7280"
+        },
+        "border": {
+            "default": "#E5E7EB",
+            "secondary": "#D1D5DB",
+            "strong": "#9CA3AF"
+        }
+    },
+    "typography": {
+        "font_family": {
+            "primary": "Inter, sans-serif"
+        },
+        "font_size": {
+            "xs": "12px",
+            "sm": "14px",
+            "base": "16px",
+            "lg": "18px",
+            "xl": "20px",
+            "2xl": "24px",
+            "3xl": "30px",
+            "4xl": "36px",
+            "5xl": "48px"
+        },
+        "font_weight": {
+            "normal": 400,
+            "medium": 500,
+            "semibold": 600,
+            "bold": 700
+        },
+        "line_height": {
+            "normal": 1.5,
+            "relaxed": 1.7,
+            "tight": 1.2
+        }
+    },
+    "layout": {
+        "container": {
+            "max_width": "1280px",
+            "padding_x": "24px",
+            "section_spacing": {
+                "small": "32px",
+                "medium": "56px",
+                "large": "80px"
+            }
+        },
+        "navbar": {
+            "height": "72px",
+            "sticky": true
+        },
+        "grid": {
+            "product_grid": {
+                "desktop": 4,
+                "tablet": 2,
+                "mobile": 2
+            },
+            "category_grid": {
+                "desktop": 6,
+                "tablet": 4,
+                "mobile": 2
+            }
+        }
+    },
+    "spacing": {
+        "gap": {
+            "xs": "4px",
+            "sm": "8px",
+            "md": "12px",
+            "lg": "16px",
+            "xl": "24px"
+        },
+        "padding": {
+            "xs": "4px",
+            "sm": "8px",
+            "md": "12px",
+            "lg": "16px",
+            "xl": "24px"
+        }
+    },
+    "border_radius": {
+        "sm": "6px",
+        "md": "8px",
+        "lg": "12px",
+        "xl": "16px",
+        "full": "9999px"
+    },
+    "shadow": {
+        "enabled": false,
+        "type": "flat_ui"
+    },
+    "animation": {
+        "enabled": false,
+        "hover_effect": false,
+        "transition": false
+    },
+    "navbar": {
+        "background": "#FFFFFF",
+        "border_bottom": "1px solid #E5E7EB",
+        "logo": {
+            "size": "44px",
+            "background": "#1D0251",
+            "text_color": "#FFFFFF",
+            "radius": "12px"
+        },
+        "searchbar": {
+            "height": "48px",
+            "background": "#F8FAFC",
+            "border": "1px solid #E5E7EB",
+            "radius": "9999px",
+            "padding_x": "20px"
+        }
+    },
+    "buttons": {
+        "primary": {
+            "style": "filled",
+            "background": "#1D0251",
+            "text": "#FFFFFF",
+            "border": "none",
+            "radius": "8px",
+            "height": "44px",
+            "padding_x": "20px",
+            "padding_y": "8px",
+            "font_weight": 600,
+            "font_size": "14px",
+            "shadow": false,
+            "animation": false
+        },
+        "secondary": {
+            "style": "outline",
+            "background": "transparent",
+            "text": "#019081",
+            "border": {
+                "width": "2px",
+                "style": "solid",
+                "color": "#019081"
+            },
+            "radius": "8px",
+            "height": "40px",
+            "padding_x": "12px",
+            "padding_y": "6px",
+            "font_weight": 600,
+            "font_size": "14px",
+            "compact_spacing": true,
+            "shadow": false,
+            "animation": false
+        },
+        "outline": {
+            "style": "outline",
+            "background": "#FFFFFF",
+            "text": "#111827",
+            "border": {
+                "width": "2px",
+                "style": "solid",
+                "color": "#9CA3AF"
+            },
+            "radius": "8px",
+            "padding_x": "12px",
+            "padding_y": "6px",
+            "font_weight": 500,
+            "font_size": "14px",
+            "compact_spacing": true,
+            "shadow": false,
+            "animation": false
+        },
+        "hero_primary": {
+            "style": "filled",
+            "background": "#FFFFFF",
+            "text": "#1D0251",
+            "padding_x": "28px",
+            "padding_y": "16px",
+            "radius": "12px",
+            "font_weight": 700,
+            "font_size": "16px"
+        },
+        "hero_secondary": {
+            "style": "outline",
+            "background": "transparent",
+            "text": "#FFFFFF",
+            "border": {
+                "width": "2px",
+                "style": "solid",
+                "color": "rgba(255,255,255,0.6)"
+            },
+            "padding_x": "20px",
+            "padding_y": "12px",
+            "radius": "12px",
+            "font_weight": 600,
+            "font_size": "15px"
+        }
+    },
+    "hero_section": {
+        "background": {
+            "type": "gradient",
+            "direction": "to right",
+            "colors": [
+                "#1D0251",
+                "#019081",
+                "#74CC7E"
+            ]
+        },
+        "radius": "16px",
+        "badge": {
+            "background": "rgba(255,255,255,0.2)",
+            "blur": true,
+            "radius": "9999px"
+        },
+        "title_size": {
+            "desktop": "48px",
+            "mobile": "36px"
+        },
+        "description_size": "18px"
+    },
+    "cards": {
+        "product_card": {
+            "background": "#FFFFFF",
+            "border": "1px solid #E5E7EB",
+            "radius": "8px",
+            "overflow": "hidden",
+            "image": {
+                "aspect_ratio": "1/1",
+                "fit": "cover"
+            },
+            "discount_badge": {
+                "background": "#B91C1C",
+                "text": "#FFFFFF",
+                "radius": "9999px"
+            },
+            "price": {
+                "color": "#019081",
+                "font_size": "20px",
+                "font_weight": 700
+            },
+            "rating": {
+                "star_color": "#CA8A04"
+            }
+        },
+        "dashboard_card": {
+            "background": "#FFFFFF",
+            "border": "1px solid #E5E7EB",
+            "radius": "8px",
+            "padding": "16px"
+        },
+        "category_card": {
+            "background": "#FFFFFF",
+            "border": "1px solid #E5E7EB",
+            "radius": "12px",
+            "padding": "16px"
+        }
+    },
+    "forms": {
+        "input": {
+            "height": "48px",
+            "background": "#FFFFFF",
+            "border": "1px solid #D1D5DB",
+            "radius": "8px",
+            "padding_x": "16px",
+            "placeholder": {
+                "color": "#6B7280"
+            }
+        }
+    },
+    "responsive_breakpoints": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
+        "2xl": "1536px"
+    },
+    "component_rules": {
+        "use_small_radius": true,
+        "use_small_gap": true,
+        "avoid_large_spacing": true,
+        "avoid_shadow": true,
+        "avoid_hover_animation": true,
+        "prefer_flat_design": true,
+        "use_soft_borders": true,
+        "maintain_consistent_spacing": true,
+        "secondary_buttons_outline_only": true,
+        "secondary_buttons_use_thicker_border": true,
+        "secondary_buttons_compact_padding": true
+    },
+    "vibe_coding_prompt_rules": {
+        "always_use_this_design_system": true,
+        "always_keep_ui_compact": true,
+        "always_use_flat_design": true,
+        "always_follow_color_palette": true,
+        "never_use_heavy_shadow": true,
+        "never_use_large_radius": true,
+        "never_use_excessive_animation": true,
+        "prefer_marketplace_ui": true,
+        "prefer_tokopedia_style_layout": true,
+        "secondary_buttons_must_be_outline": true,
+        "buttons_should_use_compact_spacing": true
+    }
+}

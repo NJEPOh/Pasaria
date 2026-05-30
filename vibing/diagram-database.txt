@@ -1,0 +1,348 @@
+┌────────────────────┐
+│       USERS        │
+├────────────────────┤
+│ id (PK)            │
+│ full_name          │
+│ email              │
+│ phone              │
+│ password_hash      │
+│ role               │
+│ profile_image_url  │
+│ is_verified        │
+│ created_at         │
+│ updated_at         │
+└─────────┬──────────┘
+          │ 1
+          │
+          │
+          ▼
+┌────────────────────┐
+│       STORES       │
+├────────────────────┤
+│ id (PK)            │
+│ user_id (FK)       │
+│ store_name         │
+│ description        │
+│ profile_image_url  │
+│ banner_image_url   │
+│ city               │
+│ province           │
+│ rating_avg         │
+│ total_sales        │
+│ is_active          │
+│ created_at         │
+└─────────┬──────────┘
+          │ 1
+          │
+          │
+          ▼
+┌────────────────────┐
+│      PRODUCTS      │
+├────────────────────┤
+│ id (PK)            │
+│ store_id (FK)      │
+│ category_id (FK)   │
+│ product_name       │
+│ slug               │
+│ price              │
+│ rating_avg         │
+│ total_sales        │
+│ stock              │
+│ weight             │
+│ description        │
+│ is_active          │
+│ created_at         │
+│ updated_at         │
+└──────┬───────┬─────┘
+       │       │
+       │       │
+       │       ▼
+       │   ┌──────────────────┐
+       │   │    CATEGORIES    │
+       │   ├──────────────────┤
+       │   │ id (PK)          │
+       │   │ parent_id (FK)   │
+       │   │ category_name    │
+       │   │ slug             │
+       │   └──────────────────┘
+       │
+       │ 1
+       │
+       ▼
+┌────────────────────┐
+│   PRODUCT_IMAGES   │
+├────────────────────┤
+│ id (PK)            │
+│ product_id (FK)    │
+│ image_url          │
+│ is_thumbnail       │
+└────────────────────┘
+
+
+══════════════════════════════════════════
+KERANJANG BELANJA
+══════════════════════════════════════════
+
+┌────────────────────┐
+│       CARTS        │
+├────────────────────┤
+│ id (PK)            │
+│ user_id (FK)       │
+│ created_at         │
+└─────────┬──────────┘
+          │ 1
+          │
+          ▼
+┌────────────────────┐
+│     CART_ITEMS     │
+├────────────────────┤
+│ id (PK)            │
+│ cart_id (FK)       │
+│ product_id (FK)    │
+│ quantity           │
+└─────────┬──────────┘
+          │
+          │
+          ▼
+      PRODUCTS
+
+
+══════════════════════════════════════════
+ALAMAT PENGIRIMAN
+══════════════════════════════════════════
+
+┌─────────────────────────┐
+│   SHIPPING_ADDRESSES    │
+├─────────────────────────┤
+│ id (PK)                 │
+│ user_id (FK)            │
+│ receiver_name           │
+│ phone                   │
+│ province                │
+│ regency                 │
+│ district                │
+│ postal_code             │
+│ full_address            │
+│ is_default              │
+└─────────────────────────┘
+
+
+══════════════════════════════════════════
+TRANSAKSI
+══════════════════════════════════════════
+
+┌────────────────────┐
+│       ORDERS       │
+├────────────────────┤
+│ id (PK)            │
+│ buyer_id (FK)      │
+│ shipping_address_id│
+│ order_code         │
+│ total_price        │
+│ shipping_cost      │
+│ grand_total        │
+│ payment_status     │
+│ order_status       │
+│ payment_method     │
+│ created_at         │
+└─────────┬──────────┘
+          │ 1
+          │
+          ▼
+┌────────────────────┐
+│    ORDER_ITEMS     │
+├────────────────────┤
+│ id (PK)            │
+│ order_id (FK)      │
+│ product_id (FK)    │
+│ store_id (FK)      │
+│ quantity           │
+│ price              │
+│ subtotal           │
+└──────┬───────┬─────┘
+       │       │
+       │       │
+       ▼       ▼
+   PRODUCTS   STORES
+
+
+══════════════════════════════════════════
+PEMBAYARAN
+══════════════════════════════════════════
+
+┌────────────────────┐
+│      PAYMENTS      │
+├────────────────────┤
+│ id (PK)            │
+│ order_id (FK)      │
+│ payment_gateway    │
+│ transaction_id     │
+│ amount             │
+│ payment_status     │
+│ paid_at            │
+│ created_at         │
+└─────────┬──────────┘
+          │
+          ▼
+       ORDERS
+
+
+══════════════════════════════════════════
+PENGIRIMAN
+══════════════════════════════════════════
+
+┌────────────────────┐
+│     SHIPMENTS      │
+├────────────────────┤
+│ id (PK)            │
+│ order_id (FK)      │
+│ courier_name       │
+│ tracking_number    │
+│ shipping_status    │
+│ delivered_at       │
+│ created_at         │
+└─────────┬──────────┘
+          │ 1
+          │
+          ▼
+┌────────────────────┐
+│ SHIPMENT_TRACKING  │
+├────────────────────┤
+│ id (PK)            │
+│ shipment_id (FK)   │
+│ status             │
+│ description        │
+│ created_at         │
+└────────────────────┘
+
+
+══════════════════════════════════════════
+REVIEW
+══════════════════════════════════════════
+
+┌────────────────────┐
+│      REVIEWS       │
+├────────────────────┤
+│ id (PK)            │
+│ order_item_id (FK) │
+│ user_id (FK)       │
+│ product_id (FK)    │
+│ rating             │
+│ comment            │
+│ created_at         │
+└─────────┬──────────┘
+          │ 1
+          │
+          ▼
+┌────────────────────┐
+│   REVIEW_IMAGES    │
+├────────────────────┤
+│ id (PK)            │
+│ review_id (FK)     │
+│ image_url          │
+└────────────────────┘
+
+
+══════════════════════════════════════════
+WISHLIST
+══════════════════════════════════════════
+
+┌────────────────────┐
+│     WISHLISTS      │
+├────────────────────┤
+│ id (PK)            │
+│ user_id (FK)       │
+│ product_id (FK)    │
+│ created_at         │
+└────────────────────┘
+
+
+══════════════════════════════════════════
+CHAT
+══════════════════════════════════════════
+
+┌────────────────────┐
+│       CHATS        │
+├────────────────────┤
+│ id (PK)            │
+│ buyer_id (FK)      │
+│ seller_id (FK)     │
+│ created_at         │
+└─────────┬──────────┘
+          │ 1
+          │
+          ▼
+┌────────────────────┐
+│   CHAT_MESSAGES    │
+├────────────────────┤
+│ id (PK)            │
+│ chat_id (FK)       │
+│ sender_id (FK)     │
+│ message            │
+│ is_read            │
+│ created_at         │
+└────────────────────┘
+
+
+══════════════════════════════════════════
+LAPORAN
+══════════════════════════════════════════
+
+┌────────────────────┐
+│      REPORTS       │
+├────────────────────┤
+│ id (PK)            │
+│ reporter_id (FK)   │
+│ reported_user_id   │
+│ order_id (FK)      │
+│ reason             │
+│ description        │
+│ status             │
+│ created_at         │
+└────────────────────┘
+
+
+══════════════════════════════════════════
+NOTIFIKASI
+══════════════════════════════════════════
+
+┌────────────────────┐
+│   NOTIFICATIONS    │
+├────────────────────┤
+│ id (PK)            │
+│ user_id (FK)       │
+│ title              │
+│ message            │
+│ type               │
+│ is_read            │
+│ created_at         │
+└────────────────────┘
+
+
+══════════════════════════════════════════
+VOUCHER
+══════════════════════════════════════════
+
+┌────────────────────┐
+│      VOUCHERS      │
+├────────────────────┤
+│ id (PK)            │
+│ code               │
+│ type               │
+│ value              │
+│ minimum_purchase   │
+│ max_discount       │
+│ quota              │
+│ expired_at         │
+└─────────┬──────────┘
+          │ 1
+          │
+          ▼
+┌────────────────────┐
+│   USER_VOUCHERS    │
+├────────────────────┤
+│ id (PK)            │
+│ user_id (FK)       │
+│ voucher_id (FK)    │
+│ is_used            │
+└────────────────────┘

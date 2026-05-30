@@ -1,0 +1,544 @@
+{
+    "project": {
+        "name": "SemarCommerce",
+        "type": "Marketplace UMKM",
+        "frontend": "Svelte",
+        "backend": "Golang",
+        "database": "MySQL",
+        "authentication": "JWT",
+        "architecture": "REST API"
+    },
+    "roles": {
+        "buyer": {
+            "description": "Pengguna default marketplace"
+        },
+        "seller": {
+            "description": "User yang sudah membuat toko dan memiliki akses seller dashboard"
+        }
+    },
+    "database": {
+        "tables": [
+            {
+                "name": "users",
+                "description": "Data akun pengguna",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "full_name",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "email",
+                        "type": "VARCHAR(100)",
+                        "unique": true
+                    },
+                    {
+                        "name": "phone",
+                        "type": "VARCHAR(20)"
+                    },
+                    {
+                        "name": "password_hash",
+                        "type": "TEXT"
+                    },
+                    {
+                        "name": "role",
+                        "type": "ENUM('buyer','seller')",
+                        "default": "buyer"
+                    },
+                    {
+                        "name": "profile_image_url",
+                        "type": "TEXT"
+                    },
+                    {
+                        "name": "is_verified",
+                        "type": "BOOLEAN",
+                        "default": false
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "TIMESTAMP"
+                    },
+                    {
+                        "name": "updated_at",
+                        "type": "TIMESTAMP"
+                    }
+                ]
+            },
+            {
+                "name": "stores",
+                "description": "Data toko seller",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "BIGINT",
+                        "foreign_key": "users.id",
+                        "unique": true
+                    },
+                    {
+                        "name": "store_name",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "description",
+                        "type": "TEXT"
+                    },
+                    {
+                        "name": "profile_image_url",
+                        "type": "TEXT"
+                    },
+                    {
+                        "name": "banner_image_url",
+                        "type": "TEXT"
+                    },
+                    {
+                        "name": "city",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "province",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "rating_avg",
+                        "type": "DECIMAL(2,1)"
+                    },
+                    {
+                        "name": "total_sales",
+                        "type": "INT",
+                        "default": 0
+                    },
+                    {
+                        "name": "is_active",
+                        "type": "BOOLEAN",
+                        "default": true
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "TIMESTAMP"
+                    }
+                ]
+            },
+            {
+                "name": "categories",
+                "description": "Kategori produk",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "parent_id",
+                        "type": "BIGINT",
+                        "nullable": true,
+                        "foreign_key": "categories.id"
+                    },
+                    {
+                        "name": "category_name",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "slug",
+                        "type": "VARCHAR(100)"
+                    }
+                ]
+            },
+            {
+                "name": "products",
+                "description": "Produk marketplace",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "store_id",
+                        "type": "BIGINT",
+                        "foreign_key": "stores.id"
+                    },
+                    {
+                        "name": "category_id",
+                        "type": "BIGINT",
+                        "foreign_key": "categories.id"
+                    },
+                    {
+                        "name": "product_name",
+                        "type": "VARCHAR(150)"
+                    },
+                    {
+                        "name": "slug",
+                        "type": "VARCHAR(150)"
+                    },
+                    {
+                        "name": "price",
+                        "type": "DECIMAL(12,2)"
+                    },
+                    {
+                        "name": "rating_avg",
+                        "type": "DECIMAL(2,1)"
+                    },
+                    {
+                        "name": "total_sales",
+                        "type": "INT",
+                        "default": 0
+                    },
+                    {
+                        "name": "stock",
+                        "type": "INT"
+                    },
+                    {
+                        "name": "weight",
+                        "type": "INT"
+                    },
+                    {
+                        "name": "description",
+                        "type": "TEXT"
+                    },
+                    {
+                        "name": "is_active",
+                        "type": "BOOLEAN",
+                        "default": true
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "TIMESTAMP"
+                    },
+                    {
+                        "name": "updated_at",
+                        "type": "TIMESTAMP"
+                    }
+                ]
+            },
+            {
+                "name": "product_images",
+                "description": "Gambar produk",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "product_id",
+                        "type": "BIGINT",
+                        "foreign_key": "products.id"
+                    },
+                    {
+                        "name": "image_url",
+                        "type": "TEXT"
+                    },
+                    {
+                        "name": "is_thumbnail",
+                        "type": "BOOLEAN",
+                        "default": false
+                    }
+                ]
+            },
+            {
+                "name": "carts",
+                "description": "Keranjang user",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "BIGINT",
+                        "foreign_key": "users.id",
+                        "unique": true
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "TIMESTAMP"
+                    }
+                ]
+            },
+            {
+                "name": "cart_items",
+                "description": "Isi keranjang",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "cart_id",
+                        "type": "BIGINT",
+                        "foreign_key": "carts.id"
+                    },
+                    {
+                        "name": "product_id",
+                        "type": "BIGINT",
+                        "foreign_key": "products.id"
+                    },
+                    {
+                        "name": "quantity",
+                        "type": "INT"
+                    }
+                ]
+            },
+            {
+                "name": "shipping_addresses",
+                "description": "Alamat pengiriman user",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "user_id",
+                        "type": "BIGINT",
+                        "foreign_key": "users.id"
+                    },
+                    {
+                        "name": "receiver_name",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "phone",
+                        "type": "VARCHAR(20)"
+                    },
+                    {
+                        "name": "province",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "regency",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "district",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "postal_code",
+                        "type": "VARCHAR(10)"
+                    },
+                    {
+                        "name": "full_address",
+                        "type": "TEXT"
+                    },
+                    {
+                        "name": "is_default",
+                        "type": "BOOLEAN",
+                        "default": false
+                    }
+                ]
+            },
+            {
+                "name": "orders",
+                "description": "Data transaksi pembelian",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "buyer_id",
+                        "type": "BIGINT",
+                        "foreign_key": "users.id"
+                    },
+                    {
+                        "name": "shipping_address_id",
+                        "type": "BIGINT",
+                        "foreign_key": "shipping_addresses.id"
+                    },
+                    {
+                        "name": "order_code",
+                        "type": "VARCHAR(100)",
+                        "unique": true
+                    },
+                    {
+                        "name": "total_price",
+                        "type": "DECIMAL(12,2)"
+                    },
+                    {
+                        "name": "shipping_cost",
+                        "type": "DECIMAL(12,2)"
+                    },
+                    {
+                        "name": "grand_total",
+                        "type": "DECIMAL(12,2)"
+                    },
+                    {
+                        "name": "payment_status",
+                        "type": "ENUM('pending','paid','cancelled')"
+                    },
+                    {
+                        "name": "order_status",
+                        "type": "ENUM('waiting_payment','processed','shipped','delivered','completed','cancelled')"
+                    },
+                    {
+                        "name": "payment_method",
+                        "type": "VARCHAR(50)"
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "TIMESTAMP"
+                    }
+                ]
+            },
+            {
+                "name": "order_items",
+                "description": "Produk dalam transaksi",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "order_id",
+                        "type": "BIGINT",
+                        "foreign_key": "orders.id"
+                    },
+                    {
+                        "name": "product_id",
+                        "type": "BIGINT",
+                        "foreign_key": "products.id"
+                    },
+                    {
+                        "name": "store_id",
+                        "type": "BIGINT",
+                        "foreign_key": "stores.id"
+                    },
+                    {
+                        "name": "quantity",
+                        "type": "INT"
+                    },
+                    {
+                        "name": "price",
+                        "type": "DECIMAL(12,2)"
+                    },
+                    {
+                        "name": "subtotal",
+                        "type": "DECIMAL(12,2)"
+                    }
+                ]
+            },
+            {
+                "name": "payments",
+                "description": "Pembayaran transaksi",
+                "columns": [
+                    {
+                        "name": "id",
+                        "type": "BIGINT",
+                        "primary_key": true,
+                        "auto_increment": true
+                    },
+                    {
+                        "name": "order_id",
+                        "type": "BIGINT",
+                        "foreign_key": "orders.id"
+                    },
+                    {
+                        "name": "payment_gateway",
+                        "type": "VARCHAR(50)"
+                    },
+                    {
+                        "name": "transaction_id",
+                        "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "amount",
+                        "type": "DECIMAL(12,2)"
+                    },
+                    {
+                        "name": "payment_status",
+                        "type": "ENUM('pending','paid','failed','expired')"
+                    },
+                    {
+                        "name": "paid_at",
+                        "type": "TIMESTAMP",
+                        "nullable": true
+                    },
+                    {
+                        "name": "created_at",
+                        "type": "TIMESTAMP"
+                    }
+                ]
+            }
+        ]
+    },
+    "features": {
+        "buyer": [
+            "register",
+            "login",
+            "lihat_produk",
+            "search_produk",
+            "filter_produk",
+            "wishlist",
+            "tambah_keranjang",
+            "checkout",
+            "pilih_alamat",
+            "pilih_pembayaran",
+            "tracking_pengiriman",
+            "review_produk",
+            "chat_seller",
+            "gunakan_voucher",
+            "riwayat_pembelian",
+            "report_transaksi"
+        ],
+        "seller": [
+            "login_seller_dashboard",
+            "buat_toko",
+            "edit_profil_toko",
+            "upload_banner_toko",
+            "tambah_produk",
+            "edit_produk",
+            "hapus_produk",
+            "upload_foto_produk",
+            "atur_stok",
+            "lihat_pesanan_masuk",
+            "ubah_status_pesanan",
+            "input_resi",
+            "chat_pembeli",
+            "lihat_statistik_penjualan",
+            "lihat_rating_produk",
+            "lihat_performa_toko",
+            "aktif_nonaktif_produk",
+            "atur_voucher_toko"
+        ]
+    },
+    "relationships": [
+        "users.id -> stores.user_id",
+        "stores.id -> products.store_id",
+        "categories.id -> products.category_id",
+        "products.id -> product_images.product_id",
+        "users.id -> carts.user_id",
+        "carts.id -> cart_items.cart_id",
+        "products.id -> cart_items.product_id",
+        "users.id -> shipping_addresses.user_id",
+        "users.id -> orders.buyer_id",
+        "shipping_addresses.id -> orders.shipping_address_id",
+        "orders.id -> order_items.order_id",
+        "products.id -> order_items.product_id",
+        "stores.id -> order_items.store_id",
+        "orders.id -> payments.order_id"
+    ]
+}
