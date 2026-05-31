@@ -9,3 +9,18 @@ func NewService(repository *Repository) *Service {
 		repository: repository,
 	}
 }
+
+func (s *Service) Register(req RegisterRequest) error {
+
+	user := User{
+		FullName: req.FullName,
+		Email:    req.Email,
+
+		// nanti diganti bcrypt
+		PasswordHash: req.Password,
+
+		Role: "customer",
+	}
+
+	return s.repository.CreateUser(&user)
+}
