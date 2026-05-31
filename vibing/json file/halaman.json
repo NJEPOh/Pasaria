@@ -1,0 +1,265 @@
+{
+    "application_name": "SemarCommerce",
+    "application_type": "Marketplace UMKM",
+    "pages": {
+        "home": {
+            "title": "Beranda",
+            "components": [
+                {
+                    "type": "sticky_navbar",
+                    "items": [
+                        "logo_button",
+                        "search_bar",
+                        "cart_button",
+                        "notification_button",
+                        "chat_button",
+                        "seller_center_button",
+                        "profile_button"
+                    ]
+                },
+                {
+                    "type": "promo_banner_carousel",
+                    "description": "Banner promosi UMKM dan event marketplace"
+                },
+                {
+                    "type": "category_section",
+                    "description": "Daftar kategori produk"
+                },
+                {
+                    "type": "product_catalog",
+                    "grid_columns": 5,
+                    "max_products_per_load": 10,
+                    "load_more_button": true
+                },
+                {
+                    "type": "footer"
+                }
+            ]
+        },
+        "product_detail": {
+            "title": "Detail Produk",
+            "components": [
+                {
+                    "type": "sticky_navbar"
+                },
+                {
+                    "type": "product_gallery",
+                    "features": [
+                        "multiple_images",
+                        "zoom_preview"
+                    ]
+                },
+                {
+                    "type": "product_information",
+                    "fields": [
+                        "product_name",
+                        "total_sold",
+                        "rating",
+                        "review_count",
+                        "price",
+                        "stock",
+                        "variants",
+                        "product_description"
+                    ]
+                },
+                {
+                    "type": "seller_information",
+                    "fields": [
+                        "store_name",
+                        "store_rating",
+                        "store_location",
+                        "chat_button",
+                        "visit_store_button"
+                    ]
+                },
+                {
+                    "type": "customer_reviews"
+                },
+                {
+                    "type": "sticky_action_panel",
+                    "position": "right",
+                    "buttons": [
+                        "add_to_cart",
+                        "buy_now",
+                        "wishlist",
+                        "chat_seller",
+                        "share_product"
+                    ]
+                },
+                {
+                    "type": "related_products",
+                    "grid_columns": 5
+                },
+                {
+                    "type": "footer"
+                }
+            ]
+        },
+        "cart": {
+            "title": "Keranjang",
+            "components": [
+                {
+                    "type": "sticky_navbar"
+                },
+                {
+                    "type": "select_all_checkbox"
+                },
+                {
+                    "type": "cart_table",
+                    "features": [
+                        "change_quantity",
+                        "remove_item",
+                        "select_item"
+                    ]
+                },
+                {
+                    "type": "shopping_summary",
+                    "position": "right",
+                    "fields": [
+                        "subtotal",
+                        "shipping_cost",
+                        "total_price"
+                    ],
+                    "buttons": [
+                        "checkout"
+                    ]
+                },
+                {
+                    "type": "recommended_products",
+                    "grid_columns": 4
+                },
+                {
+                    "type": "footer"
+                }
+            ]
+        },
+        "notifications_popup": {
+            "title": "Notifikasi",
+            "type": "popup",
+            "sections": [
+                "waiting_confirmation",
+                "processing_order",
+                "shipping_order",
+                "completed_order"
+            ],
+            "settings_button": {
+                "redirect_to": "profile.notifications"
+            }
+        },
+        "notifications_page": {
+            "title": "Pengaturan Notifikasi",
+            "settings": [
+                "payment_notification",
+                "order_confirmation_notification",
+                "processing_notification",
+                "shipping_notification",
+                "completed_notification",
+                "reminder_notification",
+                "promotion_notification"
+            ]
+        },
+        "chat": {
+            "title": "Pesan",
+            "components": [
+                {
+                    "type": "conversation_list"
+                },
+                {
+                    "type": "chat_room"
+                },
+                {
+                    "type": "message_input"
+                }
+            ]
+        },
+        "seller_center": {
+            "title": "Pusat Penjual",
+            "dashboard": {
+                "tabs": [
+                    "all_orders",
+                    "new_orders",
+                    "ready_to_ship",
+                    "shipping",
+                    "completed_orders",
+                    "cancelled_orders"
+                ]
+            },
+            "product_list": {
+                "title": "Daftar Produk",
+                "top_actions": [
+                    "add_product"
+                ],
+                "product_card_fields": [
+                    "product_image",
+                    "product_name",
+                    "price",
+                    "stock",
+                    "status",
+                    "total_sold",
+                    "rating",
+                    "last_updated"
+                ]
+            },
+            "product_detail": {
+                "title": "Kelola Produk",
+                "editable_fields": [
+                    "product_name",
+                    "category",
+                    "price",
+                    "discount",
+                    "stock",
+                    "sku",
+                    "weight",
+                    "product_images",
+                    "variants",
+                    "description",
+                    "shipping_options"
+                ],
+                "actions": [
+                    "save_changes",
+                    "delete_product"
+                ]
+            }
+        },
+        "profile": {
+            "title": "Profil",
+            "tabs": {
+                "biodata": {
+                    "fields": [
+                        "profile_photo",
+                        "full_name",
+                        "phone_number",
+                        "email",
+                        "birth_date"
+                    ]
+                },
+                "address_list": {
+                    "features": [
+                        "add_address",
+                        "edit_address",
+                        "delete_address",
+                        "set_primary_address"
+                    ]
+                },
+                "notifications": {
+                    "redirect_to": "notifications_page"
+                }
+            }
+        }
+    },
+    "global_features": [
+        "wishlist",
+        "search_products",
+        "product_filter",
+        "product_sorting",
+        "voucher_system",
+        "flash_sale",
+        "seller_chat",
+        "order_tracking",
+        "review_and_rating",
+        "favorite_store",
+        "responsive_design",
+        "dark_mode",
+        "multi_address_support"
+    ]
+}

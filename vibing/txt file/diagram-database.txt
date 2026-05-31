@@ -22,6 +22,7 @@
 │ id (PK)            │
 │ user_id (FK)       │
 │ store_name         │
+│ is_umkm            │
 │ description        │
 │ profile_image_url  │
 │ banner_image_url   │

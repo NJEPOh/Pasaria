@@ -1,6 +1,6 @@
 {
     "project": {
-        "name": "SemarCommerce",
+        "name": "Pasarin",
         "type": "Marketplace UMKM",
         "frontend": "Svelte",
         "backend": "Golang",
@@ -88,6 +88,11 @@
                     {
                         "name": "store_name",
                         "type": "VARCHAR(100)"
+                    },
+                    {
+                        "name": "is_umkm",
+                        "type": "BOOLEAN",
+                        "default": false
                     },
                     {
                         "name": "description",
