@@ -1,8 +1,8 @@
 {
     "design_system": {
-        "name": "SemarCommerce Modern Marketplace UI",
+        "name": "Pasaria",
         "style": "Clean Minimal Marketplace",
-        "framework": "TailwindCSS",
+        "framework": "Svelte",
         "theme_mode": "light",
         "design_principle": [
             "minimal",
