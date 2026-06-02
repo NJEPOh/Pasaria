@@ -1,9 +1,9 @@
 {
     "project": {
-        "name": "Pasarin",
+        "name": "Pasaria",
         "type": "Marketplace UMKM",
         "frontend": "Svelte",
-        "backend": "Golang",
+        "backend": "NodeJS",
         "database": "MySQL",
         "authentication": "JWT",
         "architecture": "REST API"
