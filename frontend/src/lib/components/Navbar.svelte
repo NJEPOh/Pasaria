@@ -1,13 +1,32 @@
+<script>
+    import { cart } from "../stores/cart.js";
+
+    import { searchQuery } from "../stores/search.js";
+    import { cartOpen } from "../stores/ui.js";
+</script>
+
 <nav class="navbar">
     <div class="brand">
         <div class="logo">P</div>
         <span class="name">Pasaria</span>
     </div>
 
-    <input placeholder="Cari produk UMKM Indonesia..." class="search" />
+    <input
+        placeholder="Cari produk UMKM Indonesia..."
+        class="search"
+        bind:value={$searchQuery}
+    />
 
     <div class="actions">
-        <button>🛒</button>
+        <button class="cart-btn" onclick={() => cartOpen.update((v) => !v)}>
+            🛒
+
+            {#if $cart.length > 0}
+                <span class="badge">
+                    {$cart.length}
+                </span>
+            {/if}
+        </button>
         <button>🔔</button>
         <button>💬</button>
         <button>🏪</button>
@@ -96,5 +115,30 @@
 
     .actions button:hover {
         background: #e5e7eb;
+    }
+
+    .cart-btn {
+        position: relative;
+    }
+
+    .badge {
+        position: absolute;
+
+        top: -6px;
+        right: -6px;
+
+        width: 20px;
+        height: 20px;
+
+        border-radius: 50%;
+
+        background: red;
+        color: white;
+
+        font-size: 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>
