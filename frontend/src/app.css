@@ -1,0 +1,28 @@
+:root {
+
+  --primary: #1D0251;
+  --primary-hover: #16013D;
+
+  --secondary: #019081;
+  --secondary-hover: #017A6E;
+
+  --success: #15803D;
+  --warning: #CA8A04;
+  --danger: #B91C1C;
+
+  --bg: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+
+  --text: #111827;
+  --text-secondary: #374151;
+
+  --border: #E5E7EB;
+
+  font-family: Inter, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+}
