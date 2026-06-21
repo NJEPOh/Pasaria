@@ -133,31 +133,6 @@
                 }
             ]
         },
-        "notifications_popup": {
-            "title": "Notifikasi",
-            "type": "popup",
-            "sections": [
-                "waiting_confirmation",
-                "processing_order",
-                "shipping_order",
-                "completed_order"
-            ],
-            "settings_button": {
-                "redirect_to": "profile.notifications"
-            }
-        },
-        "notifications_page": {
-            "title": "Pengaturan Notifikasi",
-            "settings": [
-                "payment_notification",
-                "order_confirmation_notification",
-                "processing_notification",
-                "shipping_notification",
-                "completed_notification",
-                "reminder_notification",
-                "promotion_notification"
-            ]
-        },
         "chat": {
             "title": "Pesan",
             "components": [
@@ -172,54 +147,26 @@
                 }
             ]
         },
-        "seller_center": {
-            "title": "Pusat Penjual",
-            "dashboard": {
-                "tabs": [
-                    "all_orders",
-                    "new_orders",
-                    "ready_to_ship",
-                    "shipping",
-                    "completed_orders",
-                    "cancelled_orders"
-                ]
-            },
-            "product_list": {
-                "title": "Daftar Produk",
-                "top_actions": [
-                    "add_product"
-                ],
-                "product_card_fields": [
-                    "product_image",
-                    "product_name",
-                    "price",
-                    "stock",
-                    "status",
-                    "total_sold",
-                    "rating",
-                    "last_updated"
-                ]
-            },
-            "product_detail": {
-                "title": "Kelola Produk",
-                "editable_fields": [
-                    "product_name",
-                    "category",
-                    "price",
-                    "discount",
-                    "stock",
-                    "sku",
-                    "weight",
-                    "product_images",
-                    "variants",
-                    "description",
-                    "shipping_options"
-                ],
-                "actions": [
-                    "save_changes",
-                    "delete_product"
-                ]
-            }
+        "notifications_popup": {
+            "title": "Notifikasi",
+            "type": "popup",
+            "sections": [
+                "waiting_confirmation",
+                "processing_order",
+                "shipping_order",
+                "completed_order"
+            ]
+        },
+        "notifications_page": {
+            "title": "Pengaturan Notifikasi",
+            "settings": [
+                "payment_notification",
+                "order_confirmation_notification",
+                "processing_notification",
+                "shipping_notification",
+                "completed_notification",
+                "promotion_notification"
+            ]
         },
         "profile": {
             "title": "Profil",
@@ -245,6 +192,249 @@
                     "redirect_to": "notifications_page"
                 }
             }
+        },
+        "seller_center": {
+            "title": "Pusat Penjual",
+            "dashboard": {
+                "widgets": [
+                    "today_sales",
+                    "monthly_sales",
+                    "total_orders",
+                    "total_products",
+                    "total_revenue",
+                    "store_rating",
+                    "visitor_statistics",
+                    "recent_orders"
+                ]
+            },
+            "orders": {
+                "tabs": [
+                    "all_orders",
+                    "new_orders",
+                    "ready_to_ship",
+                    "shipping",
+                    "completed_orders",
+                    "cancelled_orders",
+                    "returned_orders"
+                ]
+            },
+            "products": {
+                "top_actions": [
+                    "add_product"
+                ],
+                "product_card_fields": [
+                    "product_image",
+                    "product_name",
+                    "price",
+                    "stock",
+                    "status",
+                    "total_sold",
+                    "rating",
+                    "last_updated"
+                ]
+            },
+            "product_detail": {
+                "editable_fields": [
+                    "product_name",
+                    "category",
+                    "price",
+                    "discount",
+                    "stock",
+                    "sku",
+                    "weight",
+                    "product_images",
+                    "variants",
+                    "description",
+                    "shipping_options"
+                ]
+            },
+            "withdraw_balance": {
+                "fields": [
+                    "available_balance",
+                    "pending_balance",
+                    "bank_account"
+                ],
+                "actions": [
+                    "request_withdraw"
+                ]
+            },
+            "analytics": {
+                "reports": [
+                    "sales_report",
+                    "visitor_report",
+                    "product_performance",
+                    "customer_report"
+                ]
+            }
+        },
+        "admin_panel": {
+            "title": "Dashboard Admin",
+            "sidebar_menu": [
+                "dashboard",
+                "orders_management",
+                "customers_management",
+                "sellers_management",
+                "categories_management",
+                "products_management",
+                "transactions_management",
+                "withdraw_management",
+                "complaints_management",
+                "reviews_management",
+                "promotions_management",
+                "reports_analytics",
+                "admins_roles",
+                "system_settings"
+            ],
+            "dashboard": {
+                "widgets": [
+                    "total_revenue",
+                    "total_orders",
+                    "total_customers",
+                    "total_sellers",
+                    "total_products",
+                    "pending_orders",
+                    "completed_orders",
+                    "monthly_sales_chart",
+                    "recent_transactions",
+                    "top_selling_products",
+                    "top_sellers",
+                    "latest_complaints"
+                ]
+            },
+            "orders_management": {
+                "tabs": [
+                    "all_orders",
+                    "pending_payment",
+                    "waiting_confirmation",
+                    "processing",
+                    "ready_to_ship",
+                    "shipping",
+                    "completed",
+                    "cancelled",
+                    "refunded"
+                ]
+            },
+            "customers_management": {
+                "fields": [
+                    "customer_id",
+                    "profile_photo",
+                    "full_name",
+                    "email",
+                    "phone_number",
+                    "registration_date",
+                    "total_orders",
+                    "total_spent",
+                    "account_status"
+                ]
+            },
+            "sellers_management": {
+                "fields": [
+                    "seller_id",
+                    "store_name",
+                    "owner_name",
+                    "email",
+                    "phone_number",
+                    "verification_status",
+                    "total_products",
+                    "total_sales",
+                    "store_rating"
+                ],
+                "actions": [
+                    "verify_store",
+                    "suspend_store",
+                    "activate_store"
+                ]
+            },
+            "categories_management": {
+                "actions": [
+                    "add_category",
+                    "edit_category",
+                    "delete_category"
+                ]
+            },
+            "products_management": {
+                "actions": [
+                    "approve_product",
+                    "reject_product",
+                    "edit_product",
+                    "delete_product"
+                ]
+            },
+            "transactions_management": {
+                "fields": [
+                    "transaction_id",
+                    "order_id",
+                    "payment_method",
+                    "transaction_amount",
+                    "marketplace_fee",
+                    "transaction_status",
+                    "transaction_date"
+                ]
+            },
+            "withdraw_management": {
+                "fields": [
+                    "withdraw_id",
+                    "seller_name",
+                    "bank_account",
+                    "request_amount",
+                    "request_date",
+                    "status"
+                ]
+            },
+            "complaints_management": {
+                "fields": [
+                    "complaint_id",
+                    "customer_name",
+                    "seller_name",
+                    "order_id",
+                    "complaint_type",
+                    "status"
+                ]
+            },
+            "reviews_management": {
+                "actions": [
+                    "hide_review",
+                    "delete_review"
+                ]
+            },
+            "promotions_management": {
+                "modules": [
+                    "voucher_management",
+                    "flash_sale_management",
+                    "banner_management",
+                    "discount_campaign_management"
+                ]
+            },
+            "reports_analytics": {
+                "reports": [
+                    "sales_report",
+                    "revenue_report",
+                    "transaction_report",
+                    "customer_growth_report",
+                    "seller_performance_report",
+                    "product_performance_report"
+                ]
+            },
+            "admins_roles": {
+                "roles": [
+                    "super_admin",
+                    "finance_admin",
+                    "customer_service_admin",
+                    "product_admin",
+                    "marketing_admin"
+                ]
+            },
+            "system_settings": {
+                "settings": [
+                    "marketplace_information",
+                    "payment_gateway",
+                    "shipping_providers",
+                    "email_configuration",
+                    "notification_configuration",
+                    "maintenance_mode",
+                    "backup_database"
+                ]
+            }
         }
     },
     "global_features": [
@@ -260,6 +450,22 @@
         "favorite_store",
         "responsive_design",
         "dark_mode",
-        "multi_address_support"
+        "multi_address_support",
+        "seller_verification",
+        "withdraw_system",
+        "commission_management",
+        "complaint_center",
+        "admin_activity_logs",
+        "analytics_dashboard",
+        "product_moderation",
+        "automated_backup",
+        "fraud_detection",
+        "real_time_notifications",
+        "sales_analytics",
+        "customer_support_ticket",
+        "refund_management",
+        "return_management",
+        "store_verification",
+        "role_based_access_control"
     ]
 }

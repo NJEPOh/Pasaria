@@ -1,0 +1,95 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "full_name": "Dealport Admin",
+            "email": "admin@dealport.com",
+            "role": "admin",
+            "profile_image_url": "assets/avatar.jpg"
+        },
+        {
+            "id": 2,
+            "full_name": "Toko Pakaian Khas Mojokerto",
+            "email": "seller@mojokerto.com",
+            "role": "seller",
+            "profile_image_url": "assets/seller.jpg"
+        }
+    ],
+    "stores": [
+        {
+            "id": 1,
+            "user_id": 2,
+            "store_name": "UMKM Mojokerto",
+            "is_umkm": true,
+            "city": "Mojokerto",
+            "province": "Jawa Timur",
+            "rating_avg": 4.8,
+            "total_sales": 1500
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "category_name": "Barang UMKM",
+            "slug": "barang-umkm"
+        },
+        {
+            "id": 2,
+            "category_name": "Pakaian",
+            "slug": "pakaian"
+        },
+        {
+            "id": 3,
+            "category_name": "Barang Elektronik",
+            "slug": "barang-elektronik"
+        }
+    ],
+    "products": [
+        {
+            "id": 101,
+            "store_id": 1,
+            "category_id": 2,
+            "product_name": "Jaket pria warna hitam asli khas UMKM mojokerto",
+            "slug": "jaket-pria-hitam-umkm",
+            "price": 150000,
+            "rating_avg": 4.7,
+            "total_sales": 999,
+            "stock": 50,
+            "weight": 500,
+            "description": "Kondisi: Baru. Etalase: Toko Pakaian. Selamat datang di toko pakaian asli khas mojokerto.",
+            "image_url": "assets/jaket-hitam.jpg"
+        },
+        {
+            "id": 102,
+            "store_id": 1,
+            "category_id": 3,
+            "product_name": "Apple iPhone 13 128GB - Garansi Resmi",
+            "slug": "apple-iphone-13",
+            "price": 9990000,
+            "rating_avg": 4.9,
+            "total_sales": 104,
+            "stock": 12,
+            "weight": 400,
+            "description": "iPhone 13 Baru. Garansi resmi.",
+            "image_url": "assets/iphone13.jpg"
+        }
+    ],
+    "orders": [
+        {
+            "id": 5001,
+            "buyer_id": 3,
+            "order_code": "INV/2026/01/001",
+            "total_price": 9990000,
+            "order_status": "Paid",
+            "created_at": "2026-10-01T11:29:00Z"
+        },
+        {
+            "id": 5002,
+            "buyer_id": 4,
+            "order_code": "INV/2026/01/002",
+            "total_price": 150000,
+            "order_status": "Pending",
+            "created_at": "2026-10-01T11:35:00Z"
+        }
+    ]
+}

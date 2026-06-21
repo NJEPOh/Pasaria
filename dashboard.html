@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Pasaria</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>PASARIA</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <p class="nav-title">Main menu</p>
+                <ul>
+                    <li class="active"><a href="#">Dashboard</a></li>
+                    <li><a href="#">Order Management</a></li>
+                    <li><a href="#">Customers</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Transaction</a></li>
+                </ul>
+                <p class="nav-title">Product</p>
+                <ul>
+                    <li><a href="#">Add Products</a></li>
+                    <li><a href="#">Product List</a></li>
+                    <li><a href="#">Product Reviews</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div style="font-weight: 600; font-size: 14px;">Dealport Admin</div>
+                <div style="font-size: 12px; color: var(--text-muted);">admin@pasaria.com</div>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+                <h2>Dashboard</h2>
+                <div class="header-actions">
+                    <input type="text" placeholder="Search data, users, or reports" class="dashboard-search">
+                    <div style="font-size: 20px;">🔔</div>
+                    <div
+                        style="width: 32px; height: 32px; background: var(--secondary-main); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">
+                        A</div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+
+                <div class="stats-grid">
+                    <div class="card-flat stat-card">
+                        <h3>Total Sales</h3>
+                        <div class="stat-value">$350K</div>
+                        <p class="stat-desc status-up">Sales ↑ 10.4%</p>
+                    </div>
+                    <div class="card-flat stat-card">
+                        <h3>Total Orders</h3>
+                        <div class="stat-value">10.7K</div>
+                        <p class="stat-desc status-up">Orders ↑ 14.4%</p>
+                    </div>
+                    <div class="card-flat stat-card">
+                        <h3>Pending & Canceled</h3>
+                        <div style="display: flex; gap: 32px; margin-top: 8px;">
+                            <div>
+                                <div style="font-size: 24px; font-weight: 700;">509</div>
+                                <div style="font-size: 12px; color: var(--text-muted);">Pending</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 24px; font-weight: 700;">94</div>
+                                <div style="font-size: 12px; color: var(--status-danger);">Canceled</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-flat" style="margin-top: 24px; padding: 24px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h3 style="font-size: 18px;">Transaction</h3>
+                        <button class="btn btn-outline" style="height: 32px;">Filter ≡</button>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Id Customer</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>#6545</td>
+                                <td>01 Oct | 11:29 am</td>
+                                <td><span class="badge badge-success">● Paid</span></td>
+                                <td style="font-weight: 600;">$64</td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>#5412</td>
+                                <td>01 Oct | 11:29 am</td>
+                                <td><span class="badge badge-warning">● Pending</span></td>
+                                <td style="font-weight: 600;">$557</td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>#6622</td>
+                                <td>01 Oct | 11:29 am</td>
+                                <td><span class="badge badge-success">● Paid</span></td>
+                                <td style="font-weight: 600;">$156</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
