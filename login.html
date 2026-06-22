@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Masuk - Pasaria</title>
+</head>
+
+<body style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #f9f9f9;">
+
+    <div class="card-flat" style="width: 400px; padding: 40px; text-align: center;">
+        <h2 style="margin-bottom: 8px;">Selamat Datang!</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">Silakan masuk ke akun Pasaria kamu</p>
+
+        <form onsubmit="event.preventDefault(); window.location.href='index.html';">
+            <input type="email" class="form-input" placeholder="Email" style="margin-bottom: 16px; width: 100%;"
+                required>
+            <input type="password" class="form-input" placeholder="Password" style="margin-bottom: 24px; width: 100%;"
+                required>
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;">Masuk</button>
+        </form>
+
+        <p style="margin-top: 20px; font-size: 14px;">Belum punya akun? <a href="register.html"
+                style="color: var(--primary-main);">Daftar di sini</a></p>
+        <p style="margin-top: 10px; font-size: 14px;"><a href="index.html" style="color: var(--text-muted);">Kembali ke
+                Beranda</a></p>
+    </div>
+
+</body>
+
+</html>

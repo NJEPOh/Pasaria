@@ -17,10 +17,16 @@
             <div class="navbar-search">
                 <input type="text" placeholder="🔍 Cari di Tokopedia (Pasaria)">
             </div>
-            <div class="navbar-icons">🛒</div>
+            <div class="navbar-icons">
+                <a href="keranjang.html" style="text-decoration: none; color: inherit;">🛒</a>
+            </div>
             <div class="navbar-auth">
-                <button class="btn btn-outline">Masuk</button>
-                <button class="btn btn-primary">Daftar</button>
+                <button class="btn btn-outline"
+                    style="margin-right: 8px; border-color: var(--text-primary); color: var(--text-primary);"
+                    onclick="window.location.href='dashboard.html'">⚙️ Dashboard Admin</button>
+
+                <button class="btn btn-outline" onclick="window.location.href='login.html'">Masuk</button>
+                <button class="btn btn-primary" onclick="window.location.href='register.html'">Daftar</button>
             </div>
         </div>
         <div class="navbar-sub-container">
@@ -40,6 +46,20 @@
         <div id="product-detail-container" class="detail-grid">
             <p>Memuat data produk...</p>
         </div>
+
+        <div id="product-detail-container" class="detail-grid">
+            <p>Memuat data produk...</p>
+        </div>
+
+        <section class="section-container"
+            style="margin-top: 64px; border-top: 1px solid var(--border-default); padding-top: 32px;">
+            <div class="section-header">
+                <h2 class="section-title">Rekomendasi untukmu</h2>
+                <a href="index.html" class="see-all">Lihat Semua</a>
+            </div>
+            <div class="product-grid" id="related-product-container">
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <div class="container">

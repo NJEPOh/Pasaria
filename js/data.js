@@ -13,25 +13,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// FUNGSI HOME: Menampilkan 30 Produk
+// FUNGSI HOME: Menampilkan Kategori & 30 Produk
 // ==========================================
 async function loadLandingPageData() {
     try {
         const response = await fetch('data/db.json');
         const data = await response.json();
 
-        // Render Kategori
+        // Render Kategori dan Produk
         renderCategories(data.categories);
-
-        // Render Katalog (30 Produk)
         renderProducts(data.products, data.stores);
     } catch (error) {
         console.error("Gagal memuat Home:", error);
     }
 }
 
+function renderCategories(categories) {
+    const container = document.getElementById('category-container');
+    if (!container) return;
+
+    // Icon dummy sederhana
+    const icons = ['🛍️', '👕', '📱', '🎮', '🧸', '📚'];
+
+    let html = '';
+    categories.forEach((cat, index) => {
+        html += `
+            <div class="category-item">
+                <div class="category-icon">${icons[index % icons.length]}</div>
+                <div class="category-name">${cat.category_name}</div>
+            </div>
+        `;
+    });
+    container.innerHTML = html;
+}
+
 function renderProducts(products, stores) {
     const container = document.getElementById('product-container');
+    if (!container) return;
+
     let html = '';
 
     // Perulangan untuk 30 item
@@ -45,11 +64,14 @@ function renderProducts(products, stores) {
 
         html += `
             <a href="detail.html?id=${product.id}" class="product-card">
-                <img src="https://placehold.co/400x400/E7E1F7/1D0251?text=Produk" class="product-image">
+                <img src="https://placehold.co/400x400/E7E1F7/1D0251?text=Produk+${i + 1}" class="product-image" alt="${product.product_name}">
                 <div class="product-info">
                     <div class="product-title">${product.product_name}</div>
                     <div class="product-price">${formatPrice}</div>
                     <div class="product-location">📍 ${store.city}</div>
+                    <div class="product-stats" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
+                        <span class="star" style="color: var(--status-warning);">★</span> ${product.rating_avg} | Terjual ${product.total_sales}
+                    </div>
                 </div>
             </a>
         `;
@@ -58,7 +80,7 @@ function renderProducts(products, stores) {
 }
 
 // ==========================================
-// FUNGSI DETAIL: Menampilkan 1 Produk
+// FUNGSI DETAIL: Menampilkan 1 Produk & Rekomendasi
 // ==========================================
 async function loadDetailPageData() {
     try {
@@ -71,6 +93,8 @@ async function loadDetailPageData() {
 
         if (product) {
             renderProductDetail(product);
+            // Panggil fungsi render produk terkait di sini
+            renderRelatedProducts(data.products, data.stores);
         } else {
             document.getElementById('product-detail-container').innerHTML = "<h3>Produk tidak ditemukan</h3>";
         }
@@ -83,15 +107,12 @@ function renderProductDetail(product) {
     const container = document.getElementById('product-detail-container');
     if (!container) return;
 
-    // 1. Format harga dengan aman
     const formatPrice = new Intl.NumberFormat('id-ID', {
         style: 'currency', currency: 'IDR', minimumFractionDigits: 0
     }).format(product.price || 0);
 
-    // 2. Gunakan fallback jika deskripsi tidak ada
     const desc = product.description || "Deskripsi produk tidak tersedia.";
 
-    // 3. Render utuh dengan template literal yang bersih
     container.innerHTML = `
         <div class="detail-image-wrapper">
             <img src="https://placehold.co/600x600/E7E1F7/1D0251?text=Produk" alt="${product.product_name}">
@@ -148,8 +169,31 @@ function renderProductDetail(product) {
     `;
 }
 
-function renderCategories(categories) {
-    const container = document.getElementById('category-container');
+function renderRelatedProducts(products, stores) {
+    const container = document.getElementById('related-product-container');
     if (!container) return;
-    container.innerHTML = categories.map(cat => `<div class="category-item">${cat.category_name}</div>`).join('');
+
+    let html = '';
+
+    // Tampilkan 10 produk saja untuk bagian rekomendasi
+    for (let i = 0; i < 10; i++) {
+        const product = products[i % products.length];
+        const store = stores.find(s => s.id === product.store_id) || { city: 'Jakarta' };
+
+        const formatPrice = new Intl.NumberFormat('id-ID', {
+            style: 'currency', currency: 'IDR', minimumFractionDigits: 0
+        }).format(product.price);
+
+        html += `
+            <a href="detail.html?id=${product.id}" class="product-card">
+                <img src="https://placehold.co/400x400/E7E1F7/1D0251?text=Rekomendasi+${i + 1}" class="product-image">
+                <div class="product-info">
+                    <div class="product-title">${product.product_name}</div>
+                    <div class="product-price">${formatPrice}</div>
+                    <div class="product-location">📍 ${store.city}</div>
+                </div>
+            </a>
+        `;
+    }
+    container.innerHTML = html;
 }
