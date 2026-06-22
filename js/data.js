@@ -53,7 +53,6 @@ function renderProducts(products, stores) {
 
     let html = '';
 
-    // Perulangan untuk 30 item
     for (let i = 0; i < 30; i++) {
         const product = products[i % products.length];
         const store = stores.find(s => s.id === product.store_id) || { city: 'Jakarta' };
@@ -62,11 +61,21 @@ function renderProducts(products, stores) {
             style: 'currency', currency: 'IDR', minimumFractionDigits: 0
         }).format(product.price);
 
+        const imageUrl = product.image_url ? product.image_url : `https://placehold.co/400x400/E7E1F7/1D0251?text=Produk+${i + 1}`;
+
+        // LOGIKA LABEL UMKM: Jika true, tampilkan badge kecil
+        const umkmLabel = product.is_umkm
+            ? `<div style="margin-top: 4px; margin-bottom: 4px;">
+                 <span style="background-color: var(--primary-main, #1D0251); color: white; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: bold; text-transform: uppercase;">UMKM</span>
+               </div>`
+            : '';
+
         html += `
             <a href="detail.html?id=${product.id}" class="product-card">
-                <img src="https://placehold.co/400x400/E7E1F7/1D0251?text=Produk+${i + 1}" class="product-image" alt="${product.product_name}">
+                <img src="${imageUrl}" class="product-image" alt="${product.product_name}">
                 <div class="product-info">
                     <div class="product-title">${product.product_name}</div>
+                    ${umkmLabel} <!-- Badge UMKM muncul di sini -->
                     <div class="product-price">${formatPrice}</div>
                     <div class="product-location">📍 ${store.city}</div>
                     <div class="product-stats" style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">
@@ -113,9 +122,12 @@ function renderProductDetail(product) {
 
     const desc = product.description || "Deskripsi produk tidak tersedia.";
 
+    // MENGGUNAKAN product.image_url DARI db.json
+    const imageUrl = product.image_url ? product.image_url : "https://placehold.co/600x600/E7E1F7/1D0251?text=Produk";
+
     container.innerHTML = `
         <div class="detail-image-wrapper">
-            <img src="https://placehold.co/600x600/E7E1F7/1D0251?text=Produk" alt="${product.product_name}">
+            <img src="${imageUrl}" alt="${product.product_name}">
         </div>
 
         <div class="detail-info">
@@ -184,9 +196,12 @@ function renderRelatedProducts(products, stores) {
             style: 'currency', currency: 'IDR', minimumFractionDigits: 0
         }).format(product.price);
 
+        // MENGGUNAKAN product.image_url DARI db.json
+        const imageUrl = product.image_url ? product.image_url : `https://placehold.co/400x400/E7E1F7/1D0251?text=Rekomendasi+${i + 1}`;
+
         html += `
             <a href="detail.html?id=${product.id}" class="product-card">
-                <img src="https://placehold.co/400x400/E7E1F7/1D0251?text=Rekomendasi+${i + 1}" class="product-image">
+                <img src="${imageUrl}" class="product-image" alt="${product.product_name}">
                 <div class="product-info">
                     <div class="product-title">${product.product_name}</div>
                     <div class="product-price">${formatPrice}</div>

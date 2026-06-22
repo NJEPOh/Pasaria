@@ -22,8 +22,10 @@
                 <input type="text" placeholder="🔍 Cari di Tokopedia (Pasaria)">
             </div>
 
-            <div class="navbar-icons">
-                <a href="keranjang.html" style="text-decoration: none; color: inherit;">🛒</a>
+            <div class="navbar-icons" style="gap: 18px;">
+                <a href="pengiriman.html" style="text-decoration: none; color: inherit;"
+                    title="Status Pengiriman">🚚</a>
+                <a href="keranjang.html" style="text-decoration: none; color: inherit;" title="Keranjang">🛒</a>
             </div>
 
             <div class="navbar-auth">
@@ -57,7 +59,7 @@
             <div class="main-col">
 
                 <div class="card-flat cart-item">
-                    <img src="https://placehold.co/200x200/E7E1F7/1D0251?text=Jaket" alt="Produk" class="cart-item-img">
+                    <img src="assets/1.jpg" alt="Produk" class="cart-item-img">
                     <div class="cart-item-info">
                         <h3 class="cart-item-title">Jaket pria warna hitam asli khas UMKM mojokerto</h3>
                         <p class="cart-item-store">Disto Mojokerto</p>
@@ -73,7 +75,25 @@
                 </div>
 
                 <div class="card-flat cart-item">
-                    <img src="https://placehold.co/200x200/E7E1F7/1D0251?text=Jaket" alt="Produk" class="cart-item-img">
+                    <!-- Ubah src dari placehold.co menjadi folder assets -->
+                    <img src="assets/1.jpg" alt="Produk" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <h3 class="cart-item-title">Jaket pria warna hitam asli khas UMKM mojokerto</h3>
+                        <p class="cart-item-store">Disto Mojokerto</p>
+                    </div>
+                    <div class="cart-item-action">
+                        <div class="cart-item-price">Rp999.999.999</div>
+                        <div class="qty-controls" style="margin-top: 12px; justify-content: flex-end;">
+                            <button class="qty-btn">-</button>
+                            <input type="text" value="1" class="qty-input" readonly>
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-flat cart-item">
+                    <!-- Ubah src dari placehold.co menjadi folder assets -->
+                    <img src="assets/1.jpg" alt="Produk" class="cart-item-img">
                     <div class="cart-item-info">
                         <h3 class="cart-item-title">Jaket pria warna hitam asli khas UMKM mojokerto</h3>
                         <p class="cart-item-store">Disto Mojokerto</p>
@@ -100,7 +120,7 @@
                     </div>
 
                     <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <button class="btn" style="background-color: var(--secondary-main); color: white; border: none;"
+                        <button class="btn btn-primary" style="width: 100%;"
                             onclick="window.location.href='checkout.html'">Beli Langsung</button>
                     </div>
                 </div>

@@ -101,7 +101,8 @@
             "stock": 50,
             "weight": 500,
             "description": "Kondisi: Baru. Etalase: Toko Pakaian. Jahitan rapi, bahan tebal dan nyaman dipakai.",
-            "image_url": "assets/jaket-hitam.jpg"
+            "image_url": "assets/1.jpg",
+            "is_umkm": true
         },
         {
             "id": 102,
@@ -115,7 +116,8 @@
             "stock": 25,
             "weight": 300,
             "description": "Batik tulis asli Surakarta menggunakan pewarna alami. Cocok untuk acara formal maupun kasual.",
-            "image_url": "assets/batik-solo.jpg"
+            "image_url": "assets/2.jpg",
+            "is_umkm": true
         },
         {
             "id": 103,
@@ -129,7 +131,8 @@
             "stock": 100,
             "weight": 200,
             "description": "Pengganti kantong plastik yang stylish. Kuat menahan beban belanjaan dan 100% biodegradable.",
-            "image_url": "assets/tas-purun.jpg"
+            "image_url": "assets/3.jpg",
+            "is_umkm": true
         },
         {
             "id": 104,
@@ -143,7 +146,8 @@
             "stock": 40,
             "weight": 250,
             "description": "Kaos berbahan serat bambu yang adem dan anti-bakteri, dengan sablon karakter orisinal bergaya anime Jepang.",
-            "image_url": "assets/kaos-anime.jpg"
+            "image_url": "assets/4.jpg",
+            "is_umkm": false
         },
         {
             "id": 105,
@@ -157,7 +161,8 @@
             "stock": 200,
             "weight": 150,
             "description": "Camilan sehat tanpa MSG dan digoreng dengan minyak kelapa premium. Tahan hingga 3 bulan.",
-            "image_url": "assets/keripik-tempe.jpg"
+            "image_url": "assets/5.jpg",
+            "is_umkm": true
         },
         {
             "id": 106,
@@ -171,7 +176,8 @@
             "stock": 80,
             "weight": 250,
             "description": "Sambal rumahan dengan ikan roa asap asli. Kemasan botol kaca ramah lingkungan.",
-            "image_url": "assets/sambal-roa.jpg"
+            "image_url": "assets/6.jpg",
+            "is_umkm": true
         },
         {
             "id": 107,
@@ -185,7 +191,8 @@
             "stock": 150,
             "weight": 350,
             "description": "Sabun mandi natural dari buah lerak yang tidak mencemari air tanah. Aman untuk kulit sensitif.",
-            "image_url": "assets/sabun-lerak.jpg"
+            "image_url": "assets/7.jpg",
+            "is_umkm": true
         },
         {
             "id": 108,
@@ -199,7 +206,8 @@
             "stock": 100,
             "weight": 20,
             "description": "Gantungan kunci akrilik tebal dengan ilustrasi gaya anime lucu. Bisa request karakter.",
-            "image_url": "assets/ganci-chibi.jpg"
+            "image_url": "assets/8.webp",
+            "is_umkm": false
         },
         {
             "id": 109,
@@ -213,7 +221,8 @@
             "stock": 60,
             "weight": 100,
             "description": "Terdiri dari sendok, garpu, dan sumpit kayu jati sisa industri mebel. Finishing food grade.",
-            "image_url": "assets/alat-makan-kayu.jpg"
+            "image_url": "assets/9.jpg",
+            "is_umkm": true
         },
         {
             "id": 110,
@@ -227,7 +236,8 @@
             "stock": 90,
             "weight": 270,
             "description": "Kopi robusta petik merah hasil panen petani lokal Jawa Timur. Aroma kuat dan pekat.",
-            "image_url": "assets/kopi-dampit.jpg"
+            "image_url": "assets/10.jpg",
+            "is_umkm": true
         },
         {
             "id": 111,
@@ -241,7 +251,8 @@
             "stock": 45,
             "weight": 200,
             "description": "Lilin ramah lingkungan dari minyak kedelai yang tidak menghasilkan asap hitam.",
-            "image_url": "assets/lilin-soy.jpg"
+            "image_url": "assets/11.jpg",
+            "is_umkm": true
         },
         {
             "id": 112,
@@ -255,7 +266,8 @@
             "stock": 70,
             "weight": 150,
             "description": "Totebag tebal pakai resleting. Desain estetis cocok untuk kuliah atau nongkrong.",
-            "image_url": "assets/totebag-kanvas.jpg"
+            "image_url": "assets/12.jpg",
+            "is_umkm": false
         },
         {
             "id": 113,
@@ -269,7 +281,8 @@
             "stock": 60,
             "weight": 600,
             "description": "Madu mentah (raw honey) langsung dari perasan sarang lebah hutan nusantara.",
-            "image_url": "assets/madu-hutan.jpg"
+            "image_url": "assets/13.jpg",
+            "is_umkm": true
         },
         {
             "id": 114,
@@ -283,7 +296,8 @@
             "stock": 300,
             "weight": 50,
             "description": "Langkah kecil mengurangi sampah plastik laut. Bambu sudah disterilisasi alami.",
-            "image_url": "assets/sedotan-bambu.jpg"
+            "image_url": "assets/14.jpg",
+            "is_umkm": true
         },
         {
             "id": 115,
@@ -297,7 +311,8 @@
             "stock": 200,
             "weight": 30,
             "description": "Satu pack isi 20 stiker vinyl anti air untuk menghias buku catatan atau laptopmu.",
-            "image_url": "assets/stiker-jurnal.jpg"
+            "image_url": "assets/15.jpg",
+            "is_umkm": false
         },
         {
             "id": 116,
@@ -311,7 +326,8 @@
             "stock": 100,
             "weight": 100,
             "description": "Kaya antioksidan, teh biru alami yang menenangkan. Tanam tanpa pestisida.",
-            "image_url": "assets/teh-telang.jpg"
+            "image_url": "assets/16.jpg",
+            "is_umkm": true
         },
         {
             "id": 117,
@@ -325,7 +341,8 @@
             "stock": 30,
             "weight": 800,
             "description": "Pot terakota berpori yang sangat baik untuk sirkulasi udara akar tanaman hiasmu.",
-            "image_url": "assets/pot-lukis.jpg"
+            "image_url": "assets/17.jpg",
+            "is_umkm": true
         },
         {
             "id": 118,
@@ -339,7 +356,8 @@
             "stock": 55,
             "weight": 120,
             "description": "Dompet lipat elegan dengan banyak slot kartu. Jahitan kuat dari pengrajin lokal.",
-            "image_url": "assets/dompet-kulit.jpg"
+            "image_url": "assets/18.jpg",
+            "is_umkm": false
         },
         {
             "id": 119,
@@ -353,7 +371,8 @@
             "stock": 80,
             "weight": 550,
             "description": "Hangatkan tubuh instan. Cukup seduh dengan air panas. Tanpa pengawet buatan.",
-            "image_url": "assets/sirup-jahe.jpg"
+            "image_url": "assets/19.jpg",
+            "is_umkm": true
         },
         {
             "id": 120,
@@ -367,7 +386,8 @@
             "stock": 120,
             "weight": 150,
             "description": "Resep lulur keraton untuk mencerahkan kulit secara alami tanpa bahan kimia keras.",
-            "image_url": "assets/lulur-bengkoang.jpg"
+            "image_url": "assets/20.jpg",
+            "is_umkm": true
         },
         {
             "id": 121,
@@ -381,7 +401,8 @@
             "stock": 40,
             "weight": 400,
             "description": "Permukaan halus untuk mouse, anti-slip di bawah. Desain ruangan lo-fi yang menenangkan.",
-            "image_url": "assets/deskmat-lofi.jpg"
+            "image_url": "assets/21.jpg",
+            "is_umkm": false
         },
         {
             "id": 122,
@@ -395,7 +416,8 @@
             "stock": 200,
             "weight": 300,
             "description": "Baju rumah paling nyaman berbahan katun rayon tebal yang menyerap keringat.",
-            "image_url": "assets/daster-arab.jpg"
+            "image_url": "assets/22.jpg",
+            "is_umkm": true
         },
         {
             "id": 123,
@@ -409,7 +431,8 @@
             "stock": 50,
             "weight": 150,
             "description": "Beri aksen etnik pada ruang tamumu dengan sarung bantal tenun asli buatan tangan pengrajin.",
-            "image_url": "assets/sarban-tenun.jpg"
+            "image_url": "assets/sarban-tenun.jpg",
+            "is_umkm": true
         },
         {
             "id": 124,
@@ -423,7 +446,8 @@
             "stock": 85,
             "weight": 100,
             "description": "Satu topi dua warna. Praktis dibawa jalan-jalan dan melindungi dari sinar matahari.",
-            "image_url": "assets/bucket-hat.jpg"
+            "image_url": "assets/bucket_hat.jpg",
+            "is_umkm": false
         },
         {
             "id": 125,
@@ -437,7 +461,8 @@
             "stock": 70,
             "weight": 250,
             "description": "Lauk praktis saat bepergian atau anak kos. Daging sapi asli tanpa campuran kelapa berlebih.",
-            "image_url": "assets/abon-sapi.jpg"
+            "image_url": "assets/abon_sapi.jpg",
+            "is_umkm": true
         },
         {
             "id": 126,
@@ -451,7 +476,8 @@
             "stock": 60,
             "weight": 200,
             "description": "Kerajinan tangan memberdayakan ibu-ibu desa untuk membersihkan gulma sungai jadi karya.",
-            "image_url": "assets/kotak-tisu.jpg"
+            "image_url": "assets/kotak_tisu.jpg",
+            "is_umkm": true
         },
         {
             "id": 127,
@@ -465,7 +491,8 @@
             "stock": 150,
             "weight": 300,
             "description": "Poster dilapisi laminasi doff, mudah dibersihkan. Dilengkapi pengait di belakang, siap pasang.",
-            "image_url": "assets/poster-mdf.jpg"
+            "image_url": "assets/poster_mdf.jpg",
+            "is_umkm": false
         },
         {
             "id": 128,
@@ -479,7 +506,8 @@
             "stock": 55,
             "weight": 400,
             "description": "Sandal santai buatan pengrajin sepatu lokal. Sol karet TPR tebal dan awet dipakai harian.",
-            "image_url": "assets/sandal-kulit.jpg"
+            "image_url": "assets/sandal-kulit.jpg",
+            "is_umkm": true
         },
         {
             "id": 129,
@@ -493,7 +521,8 @@
             "stock": 90,
             "weight": 120,
             "description": "Ekstrak murni kemiri sangrai untuk menyuburkan dan menghitamkan rambut bayi hingga dewasa.",
-            "image_url": "assets/minyak-kemiri.jpg"
+            "image_url": "assets/minyak_kemiri.jpg",
+            "is_umkm": true
         },
         {
             "id": 130,
@@ -507,7 +536,8 @@
             "stock": 180,
             "weight": 110,
             "description": "Tegak di dahi, tidak licin, dan motif eksklusif print pabrik lokal.",
-            "image_url": "assets/hijab-voal.jpg"
+            "image_url": "assets/hijab_voal.jpg",
+            "is_umkm": false
         }
     ],
     "orders": [

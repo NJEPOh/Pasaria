@@ -59,50 +59,158 @@
 
             <div class="dashboard-content">
                 <div class="card-flat" style="padding: 24px;">
-                    <h2 style="font-size: 20px; margin-bottom: 24px;">Order Management</h2>
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h2 style="font-size: 20px;">Orders Management</h2>
+                        <div class="search-container" style="width: 250px;">
+                            <input type="text" class="form-input" placeholder="Cari No. Invoice / Nama..."
+                                style="border-radius: var(--radius-full); width: 100%;">
+                        </div>
+                    </div>
 
-                    <div class="tab-container">
-                        <div class="tab-item active">All Orders</div>
-                        <div class="tab-item">Pending</div>
-                        <div class="tab-item">Shipping</div>
-                        <div class="tab-item">Completed</div>
+                    <div class="order-tabs"
+                        style="display: flex; gap: 24px; border-bottom: 1px solid var(--border-default); margin-bottom: 24px;">
+                        <div class="tab-item active" data-status="all"
+                            style="font-weight: 600; color: var(--primary-main); border-bottom: 2px solid var(--primary-main); padding-bottom: 12px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                            All Orders
+                            <span
+                                style="background: var(--primary-light); color: var(--primary-main); font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full); font-weight: 600;">3</span>
+                        </div>
+                        <div class="tab-item" data-status="pending"
+                            style="font-weight: 500; color: var(--text-muted); padding-bottom: 12px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                            Pending
+                            <span
+                                style="background: #FFF3CD; color: #856404; font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full); font-weight: 600;">1</span>
+                        </div>
+                        <div class="tab-item" data-status="shipping"
+                            style="font-weight: 500; color: var(--text-muted); padding-bottom: 12px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                            Shipping
+                            <span
+                                style="background: #CCE5FF; color: #004085; font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full); font-weight: 600;">1</span>
+                        </div>
+                        <div class="tab-item" data-status="completed"
+                            style="font-weight: 500; color: var(--text-muted); padding-bottom: 12px; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                            Completed
+                            <span
+                                style="background: #D4EDDA; color: #155724; font-size: 11px; padding: 2px 8px; border-radius: var(--radius-full); font-weight: 600;">1</span>
+                        </div>
                     </div>
 
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Order ID</th>
-                                <th>Customer Name</th>
-                                <th>Date</th>
-                                <th>Total</th>
+                                <th>Invoice & Date</th>
+                                <th>Customer</th>
+                                <th>Items Purchased</th>
+                                <th>Total Price</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td style="font-weight: 600;">INV/2026/001</td>
-                                <td>Budi Santoso</td>
-                                <td>22 Jun 2026</td>
-                                <td>Rp150.000</td>
+                            <tr data-status="pending">
+                                <td>
+                                    <div style="font-weight: 600; font-family: monospace;">INV/2026/06/002</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">21 Jun 2026, 11:35</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 500;">Budi Santoso</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Mojokerto</div>
+                                </td>
+                                <td style="max-width: 200px;">
+                                    <div
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500;">
+                                        Jaket Pria Warna Hitam Asli...</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">1x Item</div>
+                                </td>
+                                <td style="font-weight: 700;">Rp150.000</td>
                                 <td><span class="badge badge-warning">● Pending</span></td>
-                                <td><button class="btn btn-outline"
-                                        style="height: 32px; font-size: 12px;">Process</button></td>
+                                <td><button class="btn btn-primary"
+                                        style="height: 32px; font-size: 12px; padding: 0 12px;">Proses Resi</button>
+                                </td>
                             </tr>
-                            <tr>
-                                <td style="font-weight: 600;">INV/2026/002</td>
-                                <td>Siti Aminah</td>
-                                <td>21 Jun 2026</td>
-                                <td>Rp9.990.000</td>
+
+                            <tr data-status="shipping">
+                                <td>
+                                    <div style="font-weight: 600; font-family: monospace;">INV/2026/06/005</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">20 Jun 2026, 14:20</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 500;">Siti Aminah</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Bandung</div>
+                                </td>
+                                <td style="max-width: 200px;">
+                                    <div
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500;">
+                                        Kaos Distro Katun Bambu Anime</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">2x Item</div>
+                                </td>
+                                <td style="font-weight: 700;">Rp220.000</td>
+                                <td><span class="badge"
+                                        style="background: #CCE5FF; color: #004085; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 500;">●
+                                        Shipping</span></td>
+                                <td><button class="btn btn-outline"
+                                        style="height: 32px; font-size: 12px; padding: 0 12px;">Lacak</button></td>
+                            </tr>
+
+                            <tr data-status="completed">
+                                <td>
+                                    <div style="font-weight: 600; font-family: monospace;">INV/2026/06/001</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">20 Jun 2026, 11:29</div>
+                                </td>
+                                <td>
+                                    <div style="font-weight: 500;">Rian Wijaya</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">Surakarta</div>
+                                </td>
+                                <td style="max-width: 200px;">
+                                    <div
+                                        style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500;">
+                                        Kemeja Batik Tulis Solo Klasik</div>
+                                    <div style="font-size: 12px; color: var(--text-muted);">1x Item</div>
+                                </td>
+                                <td style="font-weight: 700;">Rp250.000</td>
                                 <td><span class="badge badge-success">● Completed</span></td>
-                                <td><button class="btn btn-outline" style="height: 32px; font-size: 12px;">View</button>
+                                <td><button class="btn btn-outline"
+                                        style="height: 32px; font-size: 12px; padding: 0 12px; color: var(--text-muted); border-color: var(--border-default);">Detail</button>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+
+                <script>
+                    document.querySelectorAll('.tab-item').forEach(tab => {
+                        tab.addEventListener('click', () => {
+                            // 1. Reset semua tab ke gaya tidak aktif
+                            document.querySelectorAll('.tab-item').forEach(t => {
+                                t.classList.remove('active');
+                                t.style.color = 'var(--text-muted)';
+                                t.style.fontWeight = '500';
+                                t.style.borderBottom = 'none';
+                            });
+
+                            // 2. Beri gaya aktif pada tab yang diklik
+                            tab.classList.add('active');
+                            tab.style.color = 'var(--primary-main)';
+                            tab.style.fontWeight = '600';
+                            tab.style.borderBottom = '2px solid var(--primary-main)';
+
+                            // 3. Ambil status target filter
+                            const targetStatus = tab.getAttribute('data-status');
+
+                            // 4. Saring baris tabel berdasarkan status
+                            document.querySelectorAll('.data-table tbody tr').forEach(row => {
+                                const rowStatus = row.getAttribute('data-status');
+                                if (targetStatus === 'all' || rowStatus === targetStatus) {
+                                    row.style.display = ''; // Tampilkan
+                                } else {
+                                    row.style.display = 'none'; // Sembunyikan
+                                }
+                            });
+                        });
+                    });
+                </script>
             </div>
-        </main>
     </div>
 
 </body>

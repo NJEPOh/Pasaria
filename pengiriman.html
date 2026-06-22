@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Status Pengiriman - Pasaria</title>
+    <style>
+        /* Penyesuaian khusus elemen mikro halaman pengiriman tanpa merusak style.css global */
+        .shipping-card {
+            display: flex;
+            gap: 24px;
+            padding: 24px;
+            margin-bottom: 16px;
+            align-items: center;
+        }
+
+        .shipping-img {
+            width: 100px;
+            height: 100px;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+            border: 1px solid var(--border-default);
+        }
+
+        .shipping-info {
+            flex: 1;
+        }
+
+        .shipping-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .shipping-store {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .timeline-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-default);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-text {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .timeline-time {
+            color: var(--secondary-main);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-main container">
+            <a href="index.html" class="navbar-brand">PASARIA</a>
+
+            <div class="navbar-category">
+                Kategori
+            </div>
+
+            <div class="navbar-search">
+                <input type="text" placeholder="🔍 Cari di Tokopedia (Pasaria)">
+            </div>
+
+            <div class="navbar-icons" style="gap: 18px;">
+                <a href="pengiriman.html" style="text-decoration: none; color: inherit;"
+                    title="Status Pengiriman">🚚</a>
+                <a href="keranjang.html" style="text-decoration: none; color: inherit;" title="Keranjang">🛒</a>
+            </div>
+
+            <div class="navbar-auth">
+                <button class="btn btn-outline"
+                    style="margin-right: 8px; border-color: var(--text-primary); color: var(--text-primary);"
+                    onclick="window.location.href='dashboard.html'">⚙️ Dashboard Admin</button>
+
+                <button class="btn btn-outline" onclick="window.location.href='login.html'">Masuk</button>
+                <button class="btn btn-primary" onclick="window.location.href='register.html'">Daftar</button>
+            </div>
+        </div>
+
+        <div class="navbar-sub-container">
+            <ul class="sub-links">
+                <li><a href="#">Barang UMKM</a></li>
+                <li><a href="#">Snack Murah</a></li>
+                <li><a href="#">Perabot</a></li>
+                <li><a href="#">Barang Elektronik</a></li>
+                <li><a href="#">Pakaian</a></li>
+            </ul>
+            <div class="sub-location">
+                📍 Dikirim ke <strong>Jakarta Pusat</strong> ˅
+            </div>
+        </div>
+    </nav>
+    <main class="container section-container">
+        <div class="layout-2-col">
+
+            <div class="content-left">
+                <h2 class="section-title">Status Pengiriman</h2>
+
+                <div class="card-flat shipping-card">
+                    <!-- Ubah jaket-hitam.jpg menjadi jaket_hitam.jpg -->
+                    <img src="assets/1.jpg" alt="Produk" class="shipping-img">
+                    <div class="shipping-info">
+                        <h4 class="shipping-title">Jaket pria warna hitam asli khas UMKM mojokerto</h4>
+                        <p class="shipping-store">Distro Mojokerto</p>
+                        <button class="btn btn-primary"
+                            style="margin-top: 12px; height: 36px; padding: 0 24px;">Lacak</button>
+                    </div>
+                </div>
+
+                <div class="card-flat shipping-card">
+                    <!-- Ubah kaos-anime.jpg menjadi kaos_anime.jpg -->
+                    <img src="assets/1.jpg" alt="Produk" class="shipping-img">
+                    <div class="shipping-info">
+                        <h4 class="shipping-title">Kaos Distro Katun Bambu Desain Anime Style</h4>
+                        <p class="shipping-store">Wibu Corner Store</p>
+                        <button class="btn btn-primary"
+                            style="margin-top: 12px; height: 36px; padding: 0 24px;">Lacak</button>
+                    </div>
+                </div>
+
+                <div class="card-flat shipping-card">
+                    <!-- Pastikan tas purun ini sesuai dengan format nama file di foldermu (tas-purun atau tas_purun) -->
+                    <img src="assets/2.jpg" alt="Produk" class="shipping-img">
+                    <div class="shipping-info">
+                        <h4 class="shipping-title">Tas Purun Klasik Anyaman Tradisional Borneo</h4>
+                        <p class="shipping-store">Borneo Craft UMKM</p>
+                        <button class="btn btn-primary"
+                            style="margin-top: 12px; height: 36px; padding: 0 24px;">Lacak</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="card-flat sticky-panel" style="padding: 24px;">
+                    <div class="tab-container" style="margin-bottom: 16px;">
+                        <div class="tab-item active">Detail Pelacakan</div>
+                    </div>
+
+                    <div class="timeline-wrapper">
+                        <div class="timeline-item">
+                            <span class="timeline-text">Pesanan Dibuat</span>
+                            <span class="timeline-time">10:00</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-text">Konfirmasi Pembayaran</span>
+                            <span class="timeline-time">10:15</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-text">Diproses oleh Penjual</span>
+                            <span class="timeline-time">13:00</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-text">Diserahkan ke Kurir</span>
+                            <span class="timeline-time">16:45</span>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-text">Dalam Perjalanan (Transit)</span>
+                            <span class="timeline-time">19:30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Pasaria - Platform Dukungan Ekosistem UMKM Indonesia.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
