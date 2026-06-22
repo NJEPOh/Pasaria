@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang - Pasaria</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-secondary">
+
+    <nav class="navbar">
+        <div class="navbar-main container">
+            <a href="index.html" class="navbar-brand">PASARIA</a>
+
+            <div class="navbar-category">
+                Kategori
+            </div>
+
+            <div class="navbar-search">
+                <input type="text" placeholder="🔍 Cari di Tokopedia (Pasaria)">
+            </div>
+
+            <div class="navbar-icons">
+                <a href="keranjang.html" style="text-decoration: none; color: inherit;">🛒</a>
+            </div>
+
+            <div class="navbar-auth">
+                <button class="btn btn-outline">Masuk</button>
+                <button class="btn btn-primary">Daftar</button>
+            </div>
+        </div>
+
+        <div class="navbar-sub-container">
+            <ul class="sub-links">
+                <li><a href="#">Barang UMKM</a></li>
+                <li><a href="#">Snack Murah</a></li>
+                <li><a href="#">Perabot</a></li>
+                <li><a href="#">Barang Elektronik</a></li>
+                <li><a href="#">Pakaian</a></li>
+            </ul>
+            <div class="sub-location">
+                📍 Dikirim ke <strong>Jakarta Pusat</strong> ˅
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 32px; padding-bottom: 64px;">
+        <h1 style="font-size: 24px; margin-bottom: 24px;">Keranjang</h1>
+
+        <div class="layout-2-col">
+            <div class="main-col">
+
+                <div class="card-flat cart-item">
+                    <img src="https://placehold.co/200x200/E7E1F7/1D0251?text=Jaket" alt="Produk" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <h3 class="cart-item-title">Jaket pria warna hitam asli khas UMKM mojokerto</h3>
+                        <p class="cart-item-store">Disto Mojokerto</p>
+                    </div>
+                    <div class="cart-item-action">
+                        <div class="cart-item-price">Rp999.999.999</div>
+                        <div class="qty-controls" style="margin-top: 12px; justify-content: flex-end;">
+                            <button class="qty-btn">-</button>
+                            <input type="text" value="1" class="qty-input" readonly>
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-flat cart-item">
+                    <img src="https://placehold.co/200x200/E7E1F7/1D0251?text=Jaket" alt="Produk" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <h3 class="cart-item-title">Jaket pria warna hitam asli khas UMKM mojokerto</h3>
+                        <p class="cart-item-store">Disto Mojokerto</p>
+                    </div>
+                    <div class="cart-item-action">
+                        <div class="cart-item-price">Rp999.999.999</div>
+                        <div class="qty-controls" style="margin-top: 12px; justify-content: flex-end;">
+                            <button class="qty-btn">-</button>
+                            <input type="text" value="1" class="qty-input" readonly>
+                            <button class="qty-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sidebar-col">
+                <div class="card-flat sticky-panel">
+                    <h3 style="margin-bottom: 16px;">Ringkasan Belanja</h3>
+
+                    <div class="subtotal" style="margin-bottom: 24px;">
+                        <span class="subtotal-label">Subtotal</span>
+                        <span class="subtotal-value">Rp999.999.999</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <button class="btn" style="background-color: var(--secondary-main); color: white; border: none;"
+                            onclick="window.location.href='checkout.html'">Beli Langsung</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -52,76 +52,49 @@
             </header>
 
             <div class="dashboard-content">
+                <div class="card-flat" style="padding: 24px;">
+                    <h2 style="font-size: 20px; margin-bottom: 24px;">Order Management</h2>
 
-                <div class="stats-grid">
-                    <div class="card-flat stat-card">
-                        <h3>Total Sales</h3>
-                        <div class="stat-value">$350K</div>
-                        <p class="stat-desc status-up">Sales ↑ 10.4%</p>
-                    </div>
-                    <div class="card-flat stat-card">
-                        <h3>Total Orders</h3>
-                        <div class="stat-value">10.7K</div>
-                        <p class="stat-desc status-up">Orders ↑ 14.4%</p>
-                    </div>
-                    <div class="card-flat stat-card">
-                        <h3>Pending & Canceled</h3>
-                        <div style="display: flex; gap: 32px; margin-top: 8px;">
-                            <div>
-                                <div style="font-size: 24px; font-weight: 700;">509</div>
-                                <div style="font-size: 12px; color: var(--text-muted);">Pending</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 24px; font-weight: 700;">94</div>
-                                <div style="font-size: 12px; color: var(--status-danger);">Canceled</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-flat" style="margin-top: 24px; padding: 24px;">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                        <h3 style="font-size: 18px;">Transaction</h3>
-                        <button class="btn btn-outline" style="height: 32px;">Filter ≡</button>
+                    <div class="tab-container">
+                        <div class="tab-item active">All Orders</div>
+                        <div class="tab-item">Pending</div>
+                        <div class="tab-item">Shipping</div>
+                        <div class="tab-item">Completed</div>
                     </div>
 
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Id Customer</th>
-                                <th>Order Date</th>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
+                                <th>Date</th>
+                                <th>Total</th>
                                 <th>Status</th>
-                                <th>Amount</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1.</td>
-                                <td>#6545</td>
-                                <td>01 Oct | 11:29 am</td>
-                                <td><span class="badge badge-success">● Paid</span></td>
-                                <td style="font-weight: 600;">$64</td>
-                            </tr>
-                            <tr>
-                                <td>2.</td>
-                                <td>#5412</td>
-                                <td>01 Oct | 11:29 am</td>
+                                <td style="font-weight: 600;">INV/2026/001</td>
+                                <td>Budi Santoso</td>
+                                <td>22 Jun 2026</td>
+                                <td>Rp150.000</td>
                                 <td><span class="badge badge-warning">● Pending</span></td>
-                                <td style="font-weight: 600;">$557</td>
+                                <td><button class="btn btn-outline"
+                                        style="height: 32px; font-size: 12px;">Process</button></td>
                             </tr>
                             <tr>
-                                <td>3.</td>
-                                <td>#6622</td>
-                                <td>01 Oct | 11:29 am</td>
-                                <td><span class="badge badge-success">● Paid</span></td>
-                                <td style="font-weight: 600;">$156</td>
+                                <td style="font-weight: 600;">INV/2026/002</td>
+                                <td>Siti Aminah</td>
+                                <td>21 Jun 2026</td>
+                                <td>Rp9.990.000</td>
+                                <td><span class="badge badge-success">● Completed</span></td>
+                                <td><button class="btn btn-outline" style="height: 32px; font-size: 12px;">View</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </main>
     </div>

@@ -140,8 +140,8 @@ function renderProductDetail(product) {
                     <span class="subtotal-value">${formatPrice}</span>
                 </div>
                 <div class="action-buttons">
-                    <button class="btn btn-primary">+ Keranjang</button>
-                    <button class="btn btn-outline">Beli Langsung</button>
+                    <button class="btn btn-primary" type="button" onclick="window.location.href='keranjang.html'">+ Keranjang</button>
+                    <button class="btn btn-outline" type="button" onclick="window.location.href='checkout.html'">Beli Langsung</button>
                 </div>
             </div>
         </div>

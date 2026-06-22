@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Pasaria</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-secondary">
+
+    <nav class="navbar">
+        <div class="navbar-main container">
+            <a href="index.html" class="navbar-brand">PASARIA</a>
+
+            <div class="navbar-category">
+                Kategori
+            </div>
+
+            <div class="navbar-search">
+                <input type="text" placeholder="🔍 Cari di Tokopedia (Pasaria)">
+            </div>
+
+            <div class="navbar-icons">
+                <a href="keranjang.html" style="text-decoration: none; color: inherit;">🛒</a>
+            </div>
+
+            <div class="navbar-auth">
+                <button class="btn btn-outline">Masuk</button>
+                <button class="btn btn-primary">Daftar</button>
+            </div>
+        </div>
+
+        <div class="navbar-sub-container">
+            <ul class="sub-links">
+                <li><a href="#">Barang UMKM</a></li>
+                <li><a href="#">Snack Murah</a></li>
+                <li><a href="#">Perabot</a></li>
+                <li><a href="#">Barang Elektronik</a></li>
+                <li><a href="#">Pakaian</a></li>
+            </ul>
+            <div class="sub-location">
+                📍 Dikirim ke <strong>Jakarta Pusat</strong> ˅
+            </div>
+        </div>
+    </nav>
+
+    <main class="container" style="padding-top: 32px; padding-bottom: 64px;">
+        <h1 style="font-size: 24px; margin-bottom: 24px;">Checkout</h1>
+
+        <div class="layout-2-col">
+            <div class="main-col" style="display: flex; flex-direction: column; gap: 16px;">
+
+                <div class="card-flat" style="padding: 24px;">
+                    <h3 style="margin-bottom: 12px; font-size: 16px;">Alamat Pengiriman</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Jl. Mutiara Indah No.999 RT 001 RW 001 Desa Batuah, Kecamatan Kusan Hilir, Kabupaten Tanah
+                        Bumbu, Provinsi Kalsel, Indonesia, Kode Pos 72273; Nomor HP 0852XXXXXXXX; email
+                        jumantokeren@gmail.com
+                    </p>
+                </div>
+
+                <div class="card-flat cart-item" style="padding: 24px;">
+                    <img src="https://placehold.co/200x200/E7E1F7/1D0251?text=Jaket" alt="Produk" class="cart-item-img">
+                    <div class="cart-item-info">
+                        <h3 class="cart-item-title">Jaket pria warna hitam asli khas UMKM mojokerto</h3>
+                        <p class="cart-item-store">Disto Mojokerto</p>
+                    </div>
+                </div>
+
+                <div class="card-flat" style="padding: 24px; border: 1px solid var(--border-strong);">
+                    <h3 style="margin-bottom: 8px; font-size: 16px;">Reguler (Rp99.999)</h3>
+                    <p style="color: var(--text-muted); font-size: 14px;">Estimasi tiba 32 Desember - 30 Februari</p>
+                </div>
+
+            </div>
+
+            <div class="sidebar-col">
+                <div class="card-flat sticky-panel">
+                    <h3 style="margin-bottom: 24px;">Metode Pembayaran</h3>
+
+                    <div class="payment-methods"
+                        style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
+                        <label class="radio-label">
+                            <span class="radio-text">ATM</span>
+                            <input type="radio" name="payment" checked>
+                            <span class="radio-custom"></span>
+                        </label>
+                        <label class="radio-label">
+                            <span class="radio-text">PayLater</span>
+                            <input type="radio" name="payment">
+                            <span class="radio-custom"></span>
+                        </label>
+                        <label class="radio-label">
+                            <span class="radio-text">COD</span>
+                            <input type="radio" name="payment">
+                            <span class="radio-custom"></span>
+                        </label>
+                    </div>
+
+                    <button class="btn w-100"
+                        style="background-color: var(--secondary-main); color: white; border: none;"
+                        onclick="alert('Pesanan Berhasil Dibuat!')">Buat Pesanan</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

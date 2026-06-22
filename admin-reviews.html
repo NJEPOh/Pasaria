@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - Pasaria</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>PASARIA</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <p class="nav-title">Main menu</p>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="admin-orders.html">Order Management</a></li>
+                    <li><a href="admin-customers.html">Customers</a></li>
+                    <li><a href="admin-categories.html">Categories</a></li>
+                    <li><a href="admin-transactions.html">Transaction</a></li>
+                </ul>
+                <p class="nav-title">Product</p>
+                <ul>
+                    <li><a href="admin-add-product.html">Add Products</a></li>
+                    <li><a href="admin-product-list.html">Product List</a></li>
+                    <li><a href="admin-reviews.html">Product Reviews</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div style="font-weight: 600; font-size: 14px;">Dealport Admin</div>
+                <div style="font-size: 12px; color: var(--text-muted);">admin@pasaria.com</div>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+                <h2>Dashboard</h2>
+                <div class="header-actions">
+                    <input type="text" placeholder="Search data, users, or reports" class="dashboard-search">
+                    <div style="font-size: 20px;">🔔</div>
+                    <div
+                        style="width: 32px; height: 32px; background: var(--secondary-main); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">
+                        A</div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="card-flat" style="padding: 24px;">
+                    <h2 style="font-size: 20px; margin-bottom: 24px;">Product Reviews</h2>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Customer</th>
+                                <th>Rating</th>
+                                <th>Review</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 500; width: 200px;">Jaket pria warna hitam asli...</td>
+                                <td>Budi Santoso</td>
+                                <td style="color: var(--status-warning); font-size: 16px;">★★★★★</td>
+                                <td style="max-width: 250px; color: var(--text-secondary);">
+                                    "Kualitas mantap, sesuai dengan deskripsi. Pengiriman juga super cepat!"
+                                </td>
+                                <td>22 Jun 2026</td>
+                                <td>
+                                    <button class="btn btn-outline"
+                                        style="height: 32px; font-size: 12px; color: var(--status-danger); border-color: var(--status-danger);">Hide/Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 500; width: 200px;">Apple iPhone 13 128GB</td>
+                                <td>Siti Aminah</td>
+                                <td style="color: var(--status-warning); font-size: 16px;">★★★★☆</td>
+                                <td style="max-width: 250px; color: var(--text-secondary);">
+                                    "Barang ori, tapi packing kurang aman."
+                                </td>
+                                <td>21 Jun 2026</td>
+                                <td>
+                                    <button class="btn btn-outline"
+                                        style="height: 32px; font-size: 12px; color: var(--status-danger); border-color: var(--status-danger);">Hide/Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

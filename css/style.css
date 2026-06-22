@@ -743,3 +743,168 @@ button {
 .badge-warning {
     color: var(--status-warning);
 }
+
+/* =========================================
+   COMPONENTS: Layout 2 Kolom (Keranjang & Checkout)
+   ========================================= */
+.layout-2-col {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .layout-2-col {
+        grid-template-columns: 1fr;
+        /* Jadi satu kolom bertumpuk di layar kecil */
+    }
+}
+
+.sticky-panel {
+    position: sticky;
+    top: calc(var(--navbar-height) + 24px);
+    padding: 24px;
+}
+
+/* Cart Item Styling */
+.cart-item {
+    display: flex;
+    padding: 24px;
+    gap: 24px;
+    margin-bottom: 16px;
+    align-items: center;
+}
+
+.cart-item-img {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.cart-item-store {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.cart-item-action {
+    text-align: right;
+    min-width: 150px;
+}
+
+.cart-item-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Custom Radio Button untuk Pembayaran */
+.radio-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.radio-label input {
+    display: none;
+    /* Sembunyikan radio bawaan browser */
+}
+
+.radio-custom {
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--border-strong);
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.radio-label input:checked+.radio-custom {
+    border-color: var(--status-success);
+}
+
+.radio-label input:checked+.radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: var(--status-success);
+    border-radius: 50%;
+}
+
+/* =========================================
+   COMPONENTS: Dashboard Forms & Tabs
+   ========================================= */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.form-input {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    background-color: var(--bg-secondary);
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family);
+    background-color: var(--bg-secondary);
+    resize: vertical;
+    min-height: 100px;
+}
+
+.tab-container {
+    display: flex;
+    gap: 24px;
+    border-bottom: 1px solid var(--border-default);
+    margin-bottom: 24px;
+}
+
+.tab-item {
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-item.active {
+    color: var(--secondary-main);
+    border-bottom-color: var(--secondary-main);
+    font-weight: 600;
+}

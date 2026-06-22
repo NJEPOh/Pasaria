@@ -52,76 +52,48 @@
             </header>
 
             <div class="dashboard-content">
-
-                <div class="stats-grid">
-                    <div class="card-flat stat-card">
-                        <h3>Total Sales</h3>
-                        <div class="stat-value">$350K</div>
-                        <p class="stat-desc status-up">Sales ↑ 10.4%</p>
-                    </div>
-                    <div class="card-flat stat-card">
-                        <h3>Total Orders</h3>
-                        <div class="stat-value">10.7K</div>
-                        <p class="stat-desc status-up">Orders ↑ 14.4%</p>
-                    </div>
-                    <div class="card-flat stat-card">
-                        <h3>Pending & Canceled</h3>
-                        <div style="display: flex; gap: 32px; margin-top: 8px;">
-                            <div>
-                                <div style="font-size: 24px; font-weight: 700;">509</div>
-                                <div style="font-size: 12px; color: var(--text-muted);">Pending</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 24px; font-weight: 700;">94</div>
-                                <div style="font-size: 12px; color: var(--status-danger);">Canceled</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-flat" style="margin-top: 24px; padding: 24px;">
-                    <div
-                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                        <h3 style="font-size: 18px;">Transaction</h3>
-                        <button class="btn btn-outline" style="height: 32px;">Filter ≡</button>
-                    </div>
+                <div class="card-flat" style="padding: 24px;">
+                    <h2 style="font-size: 20px; margin-bottom: 24px;">Transaction History</h2>
 
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Id Customer</th>
-                                <th>Order Date</th>
-                                <th>Status</th>
+                                <th>Transaction ID</th>
+                                <th>Order Ref</th>
+                                <th>Payment Method</th>
                                 <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1.</td>
-                                <td>#6545</td>
-                                <td>01 Oct | 11:29 am</td>
-                                <td><span class="badge badge-success">● Paid</span></td>
-                                <td style="font-weight: 600;">$64</td>
+                                <td style="font-family: monospace; color: var(--secondary-main);">TRX-987654321</td>
+                                <td>INV/2026/001</td>
+                                <td>Bank Transfer (BCA)</td>
+                                <td style="font-weight: 700;">Rp150.000</td>
+                                <td>22 Jun 2026, 10:30</td>
+                                <td><span class="badge badge-success">● Success</span></td>
                             </tr>
                             <tr>
-                                <td>2.</td>
-                                <td>#5412</td>
-                                <td>01 Oct | 11:29 am</td>
+                                <td style="font-family: monospace; color: var(--secondary-main);">TRX-987654322</td>
+                                <td>INV/2026/002</td>
+                                <td>E-Wallet (Gopay)</td>
+                                <td style="font-weight: 700;">Rp9.990.000</td>
+                                <td>21 Jun 2026, 14:15</td>
                                 <td><span class="badge badge-warning">● Pending</span></td>
-                                <td style="font-weight: 600;">$557</td>
                             </tr>
                             <tr>
-                                <td>3.</td>
-                                <td>#6622</td>
-                                <td>01 Oct | 11:29 am</td>
-                                <td><span class="badge badge-success">● Paid</span></td>
-                                <td style="font-weight: 600;">$156</td>
+                                <td style="font-family: monospace; color: var(--secondary-main);">TRX-987654323</td>
+                                <td>INV/2026/003</td>
+                                <td>Credit Card</td>
+                                <td style="font-weight: 700;">Rp450.000</td>
+                                <td>20 Jun 2026, 09:00</td>
+                                <td><span class="badge" style="color: var(--status-danger);">● Failed</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </main>
     </div>
