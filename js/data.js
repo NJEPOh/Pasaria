@@ -17,10 +17,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 async function loadLandingPageData() {
     try {
-        const response = await fetch('data/db.json');
-        const data = await response.json();
+        // PERUBAHAN: Cek LocalStorage dulu!
+        let data = JSON.parse(localStorage.getItem('pasaria_db'));
 
-        // Render Kategori dan Produk
+        if (!data) {
+            const response = await fetch('data/db.json');
+            data = await response.json();
+            localStorage.setItem('pasaria_db', JSON.stringify(data));
+        }
+
         renderCategories(data.categories);
         renderProducts(data.products, data.stores);
     } catch (error) {
@@ -93,8 +98,14 @@ function renderProducts(products, stores) {
 // ==========================================
 async function loadDetailPageData() {
     try {
-        const response = await fetch('data/db.json');
-        const data = await response.json();
+        // PERUBAHAN: Cek LocalStorage dulu!
+        let data = JSON.parse(localStorage.getItem('pasaria_db'));
+
+        if (!data) {
+            const response = await fetch('data/db.json');
+            data = await response.json();
+            localStorage.setItem('pasaria_db', JSON.stringify(data));
+        }
 
         const urlParams = new URLSearchParams(window.location.search);
         const productId = parseInt(urlParams.get('id'));
@@ -102,7 +113,6 @@ async function loadDetailPageData() {
 
         if (product) {
             renderProductDetail(product);
-            // Panggil fungsi render produk terkait di sini
             renderRelatedProducts(data.products, data.stores);
         } else {
             document.getElementById('product-detail-container').innerHTML = "<h3>Produk tidak ditemukan</h3>";

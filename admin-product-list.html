@@ -6,6 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - Pasaria</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS Khusus untuk Pop-up Modal */
+        .modal-overlay {
+            display: none;
+            /* Disembunyikan secara default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(2px);
+        }
+
+        .modal-content {
+            background: var(--bg-primary);
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .modal-close:hover {
+            color: var(--status-danger);
+        }
+    </style>
 </head>
 
 <body class="dashboard-body">
@@ -28,7 +72,7 @@
                 <p class="nav-title">Product</p>
                 <ul>
                     <li><a href="admin-add-product.html">Add Products</a></li>
-                    <li><a href="admin-product-list.html">Product List</a></li>
+                    <li class="active"><a href="admin-product-list.html">Product List</a></li>
                     <li><a href="admin-reviews.html">Product Reviews</a></li>
                 </ul>
             </nav>
@@ -38,14 +82,12 @@
                     onclick="window.location.href='index.html'">
                     🏠 Kembali ke Toko
                 </button>
-
                 <div style="font-weight: 600; font-size: 14px;">Dealport Admin</div>
                 <div style="font-size: 12px; color: var(--text-muted);">admin@pasaria.com</div>
             </div>
         </aside>
 
         <main class="dashboard-main">
-
             <header class="dashboard-header">
                 <h2>Dashboard</h2>
                 <div class="header-actions">
@@ -76,22 +118,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td style="display: flex; align-items: center; gap: 12px;">
-                                    <img src="https://placehold.co/50x50/E7E1F7/1D0251?text=Img"
-                                        style="border-radius: 4px;">
-                                    <span style="font-weight: 500;">Jaket pria warna hitam</span>
-                                </td>
-                                <td>Pakaian</td>
-                                <td style="font-weight: 600;">Rp150.000</td>
-                                <td>50</td>
-                                <td>
-                                    <button class="btn btn-outline" style="height: 32px; font-size: 12px;">Edit</button>
-                                    <button class="btn btn-outline"
-                                        style="height: 32px; font-size: 12px; color: var(--status-danger); border-color: var(--status-danger);">Delete</button>
-                                </td>
-                            </tr>
+                        <tbody id="productListBody">
                         </tbody>
                     </table>
                 </div>
@@ -99,6 +126,186 @@
         </main>
     </div>
 
+    <div id="editModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEditModal()">✖</button>
+            <h2 style="margin-bottom: 24px; font-size: 20px;">Edit Product</h2>
+
+            <form id="editProductForm">
+                <input type="hidden" id="editProdId">
+
+                <div class="form-group">
+                    <label class="form-label">Product Name</label>
+                    <input type="text" id="editProdName" class="form-input" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label class="form-label">Category</label>
+                        <select id="editProdCategory" class="form-input">
+                            <option value="1">Makanan & Minuman</option>
+                            <option value="2">Pakaian & Fashion</option>
+                            <option value="3">Kerajinan & Rumah</option>
+                            <option value="4">Aksesoris & Hobi</option>
+                            <option value="5">Perawatan Diri</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Price (Rp)</label>
+                        <input type="number" id="editProdPrice" class="form-input" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label class="form-label">Stock</label>
+                        <input type="number" id="editProdStock" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Weight (Gram)</label>
+                        <input type="number" id="editProdWeight" class="form-input">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea id="editProdDesc" class="form-textarea"></textarea>
+                </div>
+
+                <div class="form-group" style="display: flex; align-items: center; gap: 8px; margin-top: 16px;">
+                    <input type="checkbox" id="editProdUmkm" style="width: 18px; height: 18px;">
+                    <label for="editProdUmkm" style="font-weight: 600; color: var(--text-primary);">Tandai sebagai
+                        Produk UMKM</label>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px;">
+                    <button type="button" class="btn btn-outline" onclick="closeEditModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', loadAdminProducts);
+
+        // FUNGSI TAMPILKAN DATA KE TABEL
+        async function loadAdminProducts() {
+            try {
+                let db = JSON.parse(localStorage.getItem('pasaria_db'));
+                if (!db) {
+                    const response = await fetch('data/db.json');
+                    db = await response.json();
+                    localStorage.setItem('pasaria_db', JSON.stringify(db));
+                }
+
+                const tbody = document.getElementById('productListBody');
+                let html = '';
+                const productsToShow = db.products.slice().reverse();
+
+                productsToShow.forEach(product => {
+                    const category = db.categories.find(c => c.id === product.category_id);
+                    const categoryName = category ? category.category_name : 'Lain-lain';
+
+                    const formatPrice = new Intl.NumberFormat('id-ID', {
+                        style: 'currency', currency: 'IDR', minimumFractionDigits: 0
+                    }).format(product.price);
+
+                    const imageUrl = product.image_url ? product.image_url : `https://placehold.co/50x50/E7E1F7/1D0251?text=Img`;
+
+                    const umkmBadge = product.is_umkm
+                        ? `<div style="font-size: 10px; background: var(--primary-main); color: white; padding: 2px 6px; border-radius: 4px; width: max-content; margin-top: 4px;">UMKM</div>`
+                        : '';
+
+                    html += `
+                        <tr>
+                            <td style="display: flex; align-items: center; gap: 12px;">
+                                <img src="${imageUrl}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;" alt="Img">
+                                <div style="display: flex; flex-direction: column;">
+                                    <span style="font-weight: 600;">${product.product_name}</span>
+                                    ${umkmBadge}
+                                </div>
+                            </td>
+                            <td>${categoryName}</td>
+                            <td style="font-weight: 600;">${formatPrice}</td>
+                            <td>${product.stock}</td>
+                            <td>
+                                <button class="btn btn-outline" style="height: 32px; font-size: 12px; margin-right: 4px;" onclick="openEditModal(${product.id})">Edit</button>
+                                <button class="btn btn-outline" style="height: 32px; font-size: 12px; color: var(--status-danger); border-color: var(--status-danger);" onclick="deleteProduct(${product.id})">Delete</button>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                tbody.innerHTML = html;
+            } catch (error) {
+                console.error("Gagal memuat data produk:", error);
+            }
+        }
+
+        // FUNGSI HAPUS PRODUK
+        function deleteProduct(id) {
+            if (confirm('Yakin ingin menghapus produk ini dari katalog?')) {
+                let db = JSON.parse(localStorage.getItem('pasaria_db'));
+                db.products = db.products.filter(p => p.id !== id);
+                localStorage.setItem('pasaria_db', JSON.stringify(db));
+                loadAdminProducts();
+            }
+        }
+
+        // FUNGSI BUKA MODAL EDIT (Mengisi Data Lama)
+        function openEditModal(id) {
+            let db = JSON.parse(localStorage.getItem('pasaria_db'));
+            let product = db.products.find(p => p.id === id);
+
+            if (product) {
+                // Isi form dengan data produk saat ini
+                document.getElementById('editProdId').value = product.id;
+                document.getElementById('editProdName').value = product.product_name;
+                document.getElementById('editProdCategory').value = product.category_id;
+                document.getElementById('editProdPrice').value = product.price;
+                document.getElementById('editProdStock').value = product.stock;
+                document.getElementById('editProdWeight').value = product.weight || '';
+                document.getElementById('editProdDesc').value = product.description || '';
+                document.getElementById('editProdUmkm').checked = product.is_umkm || false;
+
+                // Tampilkan Modal (Ubah display jadi flex agar di tengah)
+                document.getElementById('editModal').style.display = 'flex';
+            }
+        }
+
+        // FUNGSI TUTUP MODAL
+        function closeEditModal() {
+            document.getElementById('editModal').style.display = 'none';
+        }
+
+        // FUNGSI SIMPAN PERUBAHAN
+        document.getElementById('editProductForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Cegah reload
+
+            let id = parseInt(document.getElementById('editProdId').value);
+            let db = JSON.parse(localStorage.getItem('pasaria_db'));
+            let index = db.products.findIndex(p => p.id === id);
+
+            if (index !== -1) {
+                // Perbarui data di dalam array berdasarkan inputan baru
+                db.products[index].product_name = document.getElementById('editProdName').value;
+                db.products[index].category_id = parseInt(document.getElementById('editProdCategory').value);
+                db.products[index].price = parseInt(document.getElementById('editProdPrice').value);
+                db.products[index].stock = parseInt(document.getElementById('editProdStock').value);
+                db.products[index].weight = parseInt(document.getElementById('editProdWeight').value) || 0;
+                db.products[index].description = document.getElementById('editProdDesc').value;
+                db.products[index].is_umkm = document.getElementById('editProdUmkm').checked;
+
+                // Simpan ke localStorage
+                localStorage.setItem('pasaria_db', JSON.stringify(db));
+
+                alert('Data produk berhasil diperbarui!');
+                closeEditModal(); // Tutup Pop-up
+                loadAdminProducts(); // Refresh tabel agar data baru langsung terlihat
+            }
+        });
+    </script>
 </body>
 
 </html>
