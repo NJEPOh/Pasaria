@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - Pasaria</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body class="dashboard-body">
-
     <div class="dashboard-layout">
-
         <aside class="sidebar">
             <div class="sidebar-header">
                 <h2>PASARIA</h2>
@@ -38,12 +34,10 @@
                     onclick="window.location.href='index.html'">
                     🏠 Kembali ke Toko
                 </button>
-
                 <div style="font-weight: 600; font-size: 14px;">Dealport Admin</div>
                 <div style="font-size: 12px; color: var(--text-muted);">admin@pasaria.com</div>
             </div>
         </aside>
-
         <main class="dashboard-main">
 
             <header class="dashboard-header">
@@ -56,11 +50,9 @@
                         A</div>
                 </div>
             </header>
-
             <div class="dashboard-content">
                 <div class="card-flat" style="padding: 32px; max-width: 800px;">
                     <h2 style="font-size: 20px; margin-bottom: 24px;">Add New Product</h2>
-
                     <form id="addProductForm">
                         <div class="form-group">
                             <label class="form-label">Product Image</label>
@@ -70,13 +62,11 @@
                                     placeholder</p>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label class="form-label">Product Name</label>
                             <input type="text" id="prodName" class="form-input"
                                 placeholder="Contoh: Jaket Kulit Sintetis" required>
                         </div>
-
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                             <div class="form-group">
                                 <label class="form-label">Category</label>
@@ -93,7 +83,6 @@
                                 <input type="number" id="prodPrice" class="form-input" placeholder="0" required>
                             </div>
                         </div>
-
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                             <div class="form-group">
                                 <label class="form-label">Stock</label>
@@ -104,19 +93,16 @@
                                 <input type="number" id="prodWeight" class="form-input" placeholder="0">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label class="form-label">Description</label>
                             <textarea id="prodDesc" class="form-textarea"
                                 placeholder="Jelaskan detail produk..."></textarea>
                         </div>
-
                         <div class="form-group" style="display: flex; align-items: center; gap: 8px; margin-top: 16px;">
                             <input type="checkbox" id="prodUmkm" style="width: 18px; height: 18px;">
                             <label for="prodUmkm" style="font-weight: 600; color: var(--text-primary);">Tandai sebagai
                                 Produk UMKM</label>
                         </div>
-
                         <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px;">
                             <button type="button" class="btn btn-outline"
                                 onclick="window.location.href='index.html'">Batal</button>
@@ -127,11 +113,9 @@
             </div>
         </main>
     </div>
-
     <script>
         document.getElementById('addProductForm').addEventListener('submit', async function (e) {
             e.preventDefault(); // Mencegah form melakukan reload halaman bawaan
-
             try {
                 // 1. Ambil data dari localStorage atau fetch JSON jika belum ada
                 let db = JSON.parse(localStorage.getItem('pasaria_db'));
@@ -139,10 +123,8 @@
                     const response = await fetch('data/db.json');
                     db = await response.json();
                 }
-
                 // 2. Tentukan ID baru (selalu +1 dari ID terakhir)
                 const newId = db.products.length > 0 ? db.products[db.products.length - 1].id + 1 : 1;
-
                 // 3. Susun objek produk baru berdasarkan input form
                 const newProduct = {
                     id: newId,
@@ -159,17 +141,13 @@
                     image_url: "https://placehold.co/400x400/E7E1F7/1D0251?text=Produk+Baru", // Placeholder sementara
                     is_umkm: document.getElementById('prodUmkm').checked
                 };
-
                 // 4. Masukkan ke awal array agar muncul paling atas di halaman utama
                 db.products.unshift(newProduct);
-
                 // 5. Simpan kembali ke localStorage
                 localStorage.setItem('pasaria_db', JSON.stringify(db));
-
                 // 6. Notifikasi sukses & redirect
                 alert('Produk berhasil dipublish!');
                 window.location.href = 'index.html';
-
             } catch (error) {
                 console.error("Gagal menyimpan produk:", error);
                 alert("Terjadi kesalahan saat menyimpan produk.");
@@ -177,5 +155,4 @@
         });
     </script>
 </body>
-
 </html>
